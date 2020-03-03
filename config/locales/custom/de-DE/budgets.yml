@@ -1,0 +1,13 @@
+de:
+  budgets:
+    investments:
+      index:
+        by_heading: "Petitionsvorschläge: %{heading}"
+        orders:
+          newest: "Neueste zuerst"
+          oldest: "Älteste zuerst"
+          random: "Zufällig"
+        search_form:
+          placeholder: "Suche Petitionsvorschlag"
+        sidebar:
+          create: "Eine Petition vorschlagen"

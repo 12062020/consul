@@ -1,0 +1,8 @@
+de:
+  activerecord:
+    attributes:
+      budget/investment:
+        heading_id: "Themenbereich *"
+      budget/investment/translation:
+        title: "Titel *"
+        description: "Vorschlagstext *"
