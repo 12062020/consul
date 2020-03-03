@@ -878,6 +878,8 @@ describe "Budget Investments" do
       fill_in "Title", with: "I am a bot"
       fill_in "Description", with: "This is the description"
       check   "budget_investment_terms_of_service"
+      check   "budget_investment_recipient_petition"
+      check   "budget_investment_requirements_petition"
 
       click_button "Create Investment"
 
@@ -897,6 +899,8 @@ describe "Budget Investments" do
       fill_in "budget_investment_organization_name", with: "T.I.A."
       fill_in "budget_investment_tag_list", with: "Towers"
       check   "budget_investment_terms_of_service"
+      check   "budget_investment_recipient_petition"
+      check   "budget_investment_requirements_petition"
 
       click_button "Create Investment"
 
@@ -924,6 +928,8 @@ describe "Budget Investments" do
       click_link("Edit", match: :first)
       fill_in "Title", with: "Park improvements"
       check "budget_investment_terms_of_service"
+      check "budget_investment_recipient_petition"
+      check "budget_investment_requirements_petition"
 
       click_button "Update Investment"
 
@@ -942,6 +948,8 @@ describe "Budget Investments" do
       click_link("Edit", match: :first)
       fill_in "Title", with: ""
       check "budget_investment_terms_of_service"
+      check "budget_investment_recipient_petition"
+      check "budget_investment_requirements_petition"
 
       click_button "Update Investment"
 

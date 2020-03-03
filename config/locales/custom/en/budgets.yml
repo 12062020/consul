@@ -1,16 +1,6 @@
-de:
+en:
   budgets:
     investments:
-      index:
-        by_heading: "Petitionsvorschläge: %{heading}"
-        orders:
-          newest: "Neueste zuerst"
-          oldest: "Älteste zuerst"
-          random: "Zufällig"
-        search_form:
-          placeholder: "Suche Petitionsvorschlag"
-        sidebar:
-          create: "Eine Petition vorschlagen"
       form:
         recipient_petition: "Ist der Bundestag der Rezipient für die Petition? *"
         recipient_petition_help: "Die Petitionen, die am 12. Juni auf der Bühne des Olympiastadions vorgestellt werden, werden zuvor beim Bundestag eingereicht werden. Daher sollte der Bundestag auch zuständig für das Thema deiner Petition sein. Es gibt viele wichtige Themen, für die der Bundestag nicht zuständig ist. Wenn du einen Vorschlag hast für den nicht der Bundestag zuständig ist, schicke ihn bitte an %{link}. Wir werden versuchen, soweit möglich, mit unseren Partnern zu prüfen, wie wir diesen am 12. Juni berücksichtigen können. Garantieren können wir dieses jedoch nicht."

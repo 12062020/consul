@@ -49,6 +49,8 @@ describe "Public area translatable records" do
 
       select "Everywhere", from: "budget_investment_heading_id"
       check "budget_investment_terms_of_service"
+      check "budget_investment_recipient_petition"
+      check "budget_investment_requirements_petition"
       click_button "Create Investment"
 
       expect(page).to have_content "Budget Investment created successfully"
@@ -78,6 +80,8 @@ describe "Public area translatable records" do
 
       select "Everywhere", from: "budget_investment_heading_id"
       check "budget_investment_terms_of_service"
+      check "budget_investment_recipient_petition"
+      check "budget_investment_requirements_petition"
       click_button "Create Investment"
 
       expect(page).to have_content "Budget Investment created successfully"
@@ -101,6 +105,8 @@ describe "Public area translatable records" do
 
       select "Everywhere", from: "budget_investment_heading_id"
       check "budget_investment_terms_of_service"
+      check "budget_investment_recipient_petition"
+      check "budget_investment_requirements_petition"
       click_button "Create Investment"
 
       expect(page).to have_css "#error_explanation"

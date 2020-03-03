@@ -347,6 +347,8 @@ describe "Emails" do
       fill_in "Title", with: "Build a hospital"
       fill_in "Description", with: "We have lots of people that require medical attention"
       check   "budget_investment_terms_of_service"
+      check   "budget_investment_recipient_petition"
+      check   "budget_investment_requirements_petition"
 
       click_button "Create Investment"
       expect(page).to have_content "Investment created successfully"

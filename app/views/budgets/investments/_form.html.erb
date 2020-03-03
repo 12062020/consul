@@ -3,6 +3,26 @@
   <%= render "shared/errors", resource: @investment %>
 
   <div class="row column">
+
+    <div class="small-12 column">
+      <%= f.check_box :recipient_petition, label: t("budgets.investments.form.recipient_petition") %>
+      <p class="help-text">
+        <%= sanitize(t("budgets.investments.form.recipient_petition_help",
+            link: link_to(t("budgets.investments.form.recipient_petition_link"),
+                          "mailto:xxx@12062020.de"))) %>
+      </p>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.check_box :requirements_petition, label: t("budgets.investments.form.requirements_petition") %>
+      <p class="help-text">
+        <%= sanitize(t("budgets.investments.form.requirements_petition_help",
+                       link: link_to(t("budgets.investments.form.requirements_petition_link"),
+                             "https://epetitionen.bundestag.de/epet/service.$$$.rubrik.richtlinie.html",
+                             target: "_blank")), attributes: %w[href target]) %>
+      </p>
+    </div>
+
     <div class="small-12 medium-8 column">
       <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true, } %>
     </div>

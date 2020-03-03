@@ -98,6 +98,8 @@ FactoryBot.define do
     unfeasibility_explanation { "" }
     skip_map             { "1" }
     terms_of_service     { "1" }
+    recipient_petition   { "1" }
+    requirements_petition { "1" }
     incompatible         { false }
 
     trait :with_confidence_score do

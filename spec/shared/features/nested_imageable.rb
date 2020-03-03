@@ -284,6 +284,8 @@ def imageable_fill_new_valid_budget_investment
   fill_in "Title", with: "Budget investment title"
   fill_in_ckeditor "Description", with: "Budget investment description"
   check :budget_investment_terms_of_service
+  check :budget_investment_recipient_petition
+  check :budget_investment_requirements_petition
 end
 
 def expect_image_has_title(title)

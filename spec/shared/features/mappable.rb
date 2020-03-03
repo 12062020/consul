@@ -260,10 +260,14 @@ def fill_in_budget_investment_form
   fill_in "Title", with: "Budget investment title"
   fill_in_ckeditor "Description", with: "Budget investment description"
   check :budget_investment_terms_of_service
+  check :budget_investment_recipient_petition
+  check :budget_investment_requirements_petition
 end
 
 def submit_budget_investment_form
   check :budget_investment_terms_of_service
+  check :budget_investment_recipient_petition
+  check :budget_investment_requirements_petition
   click_button "Create Investment"
 end
 
