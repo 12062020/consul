@@ -170,13 +170,13 @@ class Budget < ApplicationRecord
   def investments_orders
     case phase
     when "accepting", "reviewing"
-      %w[random]
+      %w[random newest oldest]
     when "publishing_prices", "balloting", "reviewing_ballots"
-      %w[random price]
+      %w[random price newest oldest]
     when "finished"
-      %w[random]
+      %w[random newest oldest]
     else
-      %w[random confidence_score]
+      %w[random confidence_score newest oldest]
     end
   end
 
