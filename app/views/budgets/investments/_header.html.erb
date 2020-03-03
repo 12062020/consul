@@ -51,10 +51,13 @@
             <h2 class="margin-top">
               <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
             </h2>
-            <h3>
-              <span class="tagline"><%= t("budgets.investments.header.price") %></span>
-              <%= @budget.formatted_heading_price(@heading) %>
-            </h3>
+            <% if @heading && !@heading.content_blocks.where(locale: I18n.locale).empty? %>
+              <h3>
+                <span class="tagline">
+                  <%= render "budgets/investments/content_blocks" %>
+                </span>
+              </h3>
+            <% end %>
           <% end %>
         </div>
       </div>
