@@ -43,6 +43,18 @@
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
       <div class="small-12 column">
+        <%= translations_form.text_area :problem,
+              maxlength: 500, rows: 3,
+              hint: t("budgets.investments.form.problem_help") %>
+      </div>
+
+      <div class="small-12 column">
+        <%= translations_form.text_area :petition,
+              maxlength: 500, rows: 3,
+              hint: t("budgets.investments.form.petition_help") %>
+      </div>
+
+      <div class="small-12 column">
         <%= translations_form.label :description %>
         <p class="help-text"><%= t("budgets.investments.form.description_help") %></p>
 
@@ -58,6 +70,24 @@
         <%= translations_form.text_area :summary, label: false,
               maxlength: Budget::Investment.summary_max_length,
               class: "html-area" %>
+      </div>
+
+      <div class="small-12 column">
+        <%= translations_form.text_area :organization,
+              maxlength: 1000, rows: 3,
+              hint: t("budgets.investments.form.organization_help") %>
+      </div>
+
+      <div class="small-12 column">
+        <%= translations_form.text_area :capacities,
+              maxlength: 1000, rows: 3,
+              hint: t("budgets.investments.form.capacities_help") %>
+      </div>
+
+      <div class="small-12 column">
+        <%= translations_form.text_area :cooperation,
+              maxlength: 200, rows: 3,
+              hint: t("budgets.investments.form.cooperation_help") %>
       </div>
     <% end %>
 
@@ -118,9 +148,29 @@
                         data: { js_url: suggest_tags_path } %>
     </div>
 
+    <div class="small-12 column">
+      <span><strong><%= t("budgets.investments.form.exchange") %></strong></span>
+      <p class="help-text"><%= t("budgets.investments.form.exchange_help") %></p>
+
+      <%= f.check_box :exchange_online, label: t("budgets.investments.form.exchange_online") %>
+
+      <%= f.check_box :exchange_offline,
+                      label: t("budgets.investments.form.exchange_offline"),
+                      data: {toggle: "exchange_offline_input" } %>
+
+      <div id="exchange_offline_input" class="small-12 hide" data-toggler="hide">
+        <%= f.translatable_fields do |translations_form| %>
+
+          <%= translations_form.text_area :exchange, label: false,
+              maxlength: 200, rows: 2,
+              hint: t("budgets.investments.form.exchange_offline_help") %>
+        <% end %>
+      </div>
+    </div>
+
     <% unless current_user.manager? %>
 
-      <div class="small-12 column">
+      <div class="small-12 column margin-top">
         <%= f.check_box :terms_of_service,
           title: t("form.accept_terms_title"),
           label: t("form.accept_terms",

@@ -28,6 +28,12 @@ class Budget
     translates :title, touch: true
     translates :summary, touch: true
     translates :description, touch: true
+    translates :problem, touch: true
+    translates :petition, touch: true
+    translates :organization, touch: true
+    translates :capacities, touch: true
+    translates :cooperation, touch: true
+    translates :exchange, touch: true
     include Globalizable
 
     audited on: [:update, :destroy]
@@ -56,8 +62,12 @@ class Budget
       class_name: "Comment"
 
     validates_translation :title, presence: true, length: { in: 4..Budget::Investment.title_max_length }
-    validates_translation :summary, presence: true, length: { maximum: Budget::Investment.summary_max_length }
+    validates_translation :summary, length: { maximum: Budget::Investment.summary_max_length }
     validates_translation :description, presence: true
+    validates_translation :problem, presence: true
+    validates_translation :petition, presence: true
+    validates_translation :organization, presence: true
+    validates_translation :capacities, presence: true
 
     validates :author, presence: true
     validates :heading_id, presence: true
@@ -65,6 +75,8 @@ class Budget
     validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
     validates :recipient_petition, acceptance: { allow_nil: false }, on: :create
     validates :requirements_petition, acceptance: { allow_nil: false }, on: :create
+    validates :exchange_online, acceptance: { allow_nil: false }, on: :create
+    validates :exchange_offline, acceptance: { allow_nil: false }, on: :create
 
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }

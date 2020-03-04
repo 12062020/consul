@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200304131632) do
+ActiveRecord::Schema.define(version: 20200304195927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -228,6 +228,12 @@ ActiveRecord::Schema.define(version: 20200304131632) do
     t.text     "description"
     t.datetime "hidden_at"
     t.text     "summary"
+    t.text     "problem"
+    t.text     "petition"
+    t.text     "organization"
+    t.text     "capacities"
+    t.text     "cooperation"
+    t.text     "exchange"
     t.index ["budget_investment_id"], name: "index_budget_investment_translations_on_budget_investment_id", using: :btree
     t.index ["hidden_at"], name: "index_budget_investment_translations_on_hidden_at", using: :btree
     t.index ["locale"], name: "index_budget_investment_translations_on_locale", using: :btree

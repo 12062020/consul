@@ -132,8 +132,8 @@ module Budgets
       end
 
       def investment_params
-        attributes = [:heading_id, :tag_list, :recipient_petition, :requirements_petition,
-                      :organization_name, :location, :terms_of_service, :skip_map,
+        attributes = [:heading_id, :tag_list, :recipient_petition, :requirements_petition, :exchange_offline,
+                      :exchange_online, :organization_name, :location, :terms_of_service, :skip_map,
                       image_attributes: image_attributes,
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                       map_location_attributes: [:latitude, :longitude, :zoom]]

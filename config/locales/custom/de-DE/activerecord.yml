@@ -7,3 +7,8 @@ de:
         title: "Titel *"
         summary: "Weiterführende Informationen"
         description: "Begründung *"
+        problem: "Adressiertes Problem *"
+        petition: "Wortlaut der Petition *"
+        organization: "Organisation *"
+        capacities: "Kapazitäten (Antwort nicht öffentlich) *"
+        cooperation: "Unterstützung und Kooperation"
