@@ -146,6 +146,7 @@ en:
       budget/investment:
         heading_id: "Heading"
         title: "Title"
+        summary: "Summary"
         description: "Description"
         external_url: "Link to additional documentation"
         administrator_id: "Administrator"
@@ -169,6 +170,7 @@ en:
         valuation_tag_list: "Tags"
       budget/investment/translation:
         title: "Title"
+        summary: "Summary"
         description: "Description"
       geozone:
         name: Name

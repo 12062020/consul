@@ -148,6 +148,7 @@ es:
       budget/investment:
         heading_id: "Partida presupuestaria"
         title: "Título"
+        summary: "Resumen"
         description: "Descripción"
         external_url: "Enlace a documentación adicional"
         administrator_id: "Administrador"
@@ -171,6 +172,7 @@ es:
         valuation_tag_list: "Etiquetas"
       budget/investment/translation:
         title: "Título"
+        summary: "Resumen"
         description: "Descripción"
       geozone:
         name: Nombre

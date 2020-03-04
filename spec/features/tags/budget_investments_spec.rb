@@ -68,6 +68,7 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
+    fill_in "Summary", with: "I want to live in a high tower over the clouds"
     fill_in "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
     check   "budget_investment_recipient_petition"
@@ -89,6 +90,7 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
+    fill_in_ckeditor "Summary", with: "If I had a gym near my place I could go do Zumba"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
     check "budget_investment_recipient_petition"
@@ -115,6 +117,7 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
+    fill_in_ckeditor "Summary", with: "If I had a gym near my place I could go do Zumba"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
     check "budget_investment_recipient_petition"
@@ -141,6 +144,7 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
+    fill_in_ckeditor "Summary", with: "If I had a gym near my place I could go do Zumba"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
     check "budget_investment_recipient_petition"
@@ -164,6 +168,7 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
+    fill_in "Summary", with: "I want to live in a high tower over the clouds"
     fill_in "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
     check   "budget_investment_recipient_petition"
@@ -184,6 +189,7 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
+    fill_in "Summary", with: "I want to live in a high tower over the clouds"
     fill_in "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
     check   "budget_investment_recipient_petition"

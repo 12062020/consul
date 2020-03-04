@@ -18,6 +18,8 @@
 
 <%= render_image(investment.image, :large, true) if investment.image.present? %>
 
+<blockquote><%= auto_link_already_sanitized_html wysiwyg(investment.summary) %></blockquote>
+
 <%= auto_link_already_sanitized_html wysiwyg(investment.description) %>
 
 <% if feature?(:map) && map_location_available?(@investment.map_location) %>

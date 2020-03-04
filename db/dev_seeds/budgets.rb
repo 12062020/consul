@@ -123,6 +123,7 @@ section "Creating Investments" do
 
     translation_attributes = random_locales.each_with_object({}) do |locale, attributes|
       attributes["title_#{locale.to_s.underscore}"] = "Title for locale #{locale}"
+      attributes["summary_#{locale.to_s.underscore}"] = "<p>Summary for locale #{locale}</p>"
       attributes["description_#{locale.to_s.underscore}"] = "<p>Description for locale #{locale}</p>"
     end
 
@@ -180,6 +181,7 @@ section "Winner Investments" do
       group: heading.group,
       budget: heading.group.budget,
       title: Faker::Lorem.sentence(3).truncate(60),
+      summary: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
       description: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
       created_at: rand((Time.current - 1.week)..Time.current),
       feasibility: "feasible",

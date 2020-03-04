@@ -14,6 +14,10 @@ module Measurable
       140
     end
 
+    def summary_max_length
+      1000
+    end
+
     def description_max_length
       6000
     end

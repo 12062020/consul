@@ -115,13 +115,6 @@ describe Budget::Investment do
       investment.valuation_finished = true
       expect(investment).to be_valid
     end
-
-    it "is not valid if valuation finished and feasible" do
-      investment.price = ""
-      investment.feasibility = "feasible"
-      investment.valuation_finished = true
-      expect(investment).not_to be_valid
-    end
   end
 
   describe "#code" do
@@ -622,8 +615,8 @@ describe Budget::Investment do
 
     describe "sort_by_title" do
       it "sorts using the title in the current locale" do
-        create(:budget_investment, title_en: "CCCC", title_es: "BBBB", description_en: "CCCC", description_es: "BBBB")
-        create(:budget_investment, title_en: "DDDD", title_es: "AAAA", description_en: "DDDD", description_es: "AAAA")
+        create(:budget_investment, title_en: "CCCC", title_es: "BBBB", description_en: "CCCC", description_es: "BBBB", summary_en: "Summary", summary_es: "Resumen")
+        create(:budget_investment, title_en: "DDDD", title_es: "AAAA", description_en: "DDDD", description_es: "AAAA", summary_en: "Summary", summary_es: "Resumen")
 
         expect(Budget::Investment.sort_by_title.map(&:title)).to eq %w[CCCC DDDD]
       end
@@ -755,6 +748,7 @@ describe Budget::Investment do
         { title: "save the world",
           description: "in order to save the world one must think about...",
           title_es: "para salvar el mundo uno debe pensar en...",
+          summary_es: "Tenemos que salvarlo",
           description_es: "uno debe pensar" }
       end
 

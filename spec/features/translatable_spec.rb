@@ -41,10 +41,12 @@ describe "Public area translatable records" do
       visit new_budget_investment_path(budget)
 
       fill_in "Title", with: "My awesome project"
+      fill_in_ckeditor "Summary", with: "Everything is awesome"
       fill_in_ckeditor "Description", with: "Everything is awesome!"
 
       select "Français", from: :add_language
       fill_in "Title", with: "Titre en Français"
+      fill_in_ckeditor "Summary", with: "Contenu en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
       select "Everywhere", from: "budget_investment_heading_id"
@@ -76,6 +78,7 @@ describe "Public area translatable records" do
       click_link "Remove language"
       select "Português brasileiro", from: :add_language
       fill_in "Title", with: "Titre en Français"
+      fill_in_ckeditor "Summary", with: "Contenu en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
       select "Everywhere", from: "budget_investment_heading_id"
