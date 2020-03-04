@@ -60,7 +60,6 @@ class Budget
     validates :author, presence: true
     validates :heading_id, presence: true
     validates :unfeasibility_explanation, presence: { if: :unfeasibility_explanation_required? }
-    validates :price, presence: { if: :price_required? }
     validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
     validates :recipient_petition, acceptance: { allow_nil: false }, on: :create
     validates :requirements_petition, acceptance: { allow_nil: false }, on: :create
@@ -237,10 +236,6 @@ class Budget
 
     def unfeasibility_explanation_required?
       unfeasible? && valuation_finished?
-    end
-
-    def price_required?
-      feasible? && valuation_finished?
     end
 
     def unfeasible_email_pending?
