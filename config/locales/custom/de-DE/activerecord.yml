@@ -5,5 +5,5 @@ de:
         heading_id: "Themenbereich *"
       budget/investment/translation:
         title: "Titel *"
-        summary: "Zusammenfassung *"
-        description: "Vorschlagstext *"
+        summary: "Weiterführende Informationen"
+        description: "Begründung *"

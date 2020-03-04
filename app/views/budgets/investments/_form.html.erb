@@ -43,14 +43,20 @@
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
       <div class="small-12 column">
-        <%= translations_form.text_area :summary,
-              maxlength: Budget::Investment.summary_max_length,
+        <%= translations_form.label :description %>
+        <p class="help-text"><%= t("budgets.investments.form.description_help") %></p>
+
+        <%= translations_form.text_area :description, label: false,
+              maxlength: Budget::Investment.description_max_length,
               class: "html-area" %>
       </div>
 
       <div class="small-12 column">
-        <%= translations_form.text_area :description,
-              maxlength: Budget::Investment.description_max_length,
+        <%= translations_form.label :summary %>
+        <p class="help-text"><%= t("budgets.investments.form.summary_help") %></p>
+
+        <%= translations_form.text_area :summary, label: false,
+              maxlength: Budget::Investment.summary_max_length,
               class: "html-area" %>
       </div>
     <% end %>

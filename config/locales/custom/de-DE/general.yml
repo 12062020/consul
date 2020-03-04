@@ -2,4 +2,4 @@ de:
   form:
     accept_terms: "Ich stimme der %{policy} und den %{conditions} zu. *"
   shared:
-    follow_entity: "Petitionsvorschlag folgen"
+    follow_entity: "Diesem Petitionsvorschlag folgen"
