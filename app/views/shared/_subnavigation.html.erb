@@ -37,6 +37,7 @@
                                 accesskey: "4" %>
       </li>
     <% end %>
+    <% if false%>
     <% if feature?(:budgets) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.budgets"),
@@ -45,6 +46,7 @@
                                   accesskey: "5",
                                   title: t("shared.go_to_page") + t("layouts.header.budgets") %>
       </li>
+    <% end %>
     <% end %>
     <% if feature?(:help_page) %>
       <li>
