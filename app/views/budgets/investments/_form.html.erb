@@ -9,7 +9,7 @@
       <p class="help-text">
         <%= sanitize(t("budgets.investments.form.recipient_petition_help",
             link: link_to(t("budgets.investments.form.recipient_petition_link"),
-                          "mailto:xxx@12062020.de"))) %>
+                          "mailto:petitionen@12062020.de"))) %>
       </p>
     </div>
 
@@ -43,14 +43,9 @@
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
       <div class="small-12 column">
-        <%= translations_form.text_area :problem,
-              maxlength: 500, rows: 3,
-              hint: t("budgets.investments.form.problem_help") %>
-      </div>
-
-      <div class="small-12 column">
         <%= translations_form.text_area :petition,
-              maxlength: 500, rows: 3,
+            maxlength: 500, rows: 3,
+            placeholder: t("budgets.investments.form.petition_placeholder"),
               hint: t("budgets.investments.form.petition_help") %>
       </div>
 
@@ -71,24 +66,6 @@
               maxlength: Budget::Investment.summary_max_length,
               class: "html-area" %>
       </div>
-
-      <div class="small-12 column">
-        <%= translations_form.text_area :organization,
-              maxlength: 1000, rows: 3,
-              hint: t("budgets.investments.form.organization_help") %>
-      </div>
-
-      <div class="small-12 column">
-        <%= translations_form.text_area :capacities,
-              maxlength: 1000, rows: 3,
-              hint: t("budgets.investments.form.capacities_help") %>
-      </div>
-
-      <div class="small-12 column">
-        <%= translations_form.text_area :cooperation,
-              maxlength: 200, rows: 3,
-              hint: t("budgets.investments.form.cooperation_help") %>
-      </div>
     <% end %>
 
     <%= f.invisible_captcha :subtitle %>
@@ -96,12 +73,6 @@
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
         <%= render "images/nested_image", imageable: @investment, f: f %>
-      </div>
-    <% end %>
-
-    <% if feature?(:allow_attached_documents) %>
-      <div class="documents small-12 column">
-        <%= render "documents/nested_documents", documentable: @investment, f: f %>
       </div>
     <% end %>
 
@@ -149,22 +120,36 @@
     </div>
 
     <div class="small-12 column">
-      <span><strong><%= t("budgets.investments.form.exchange") %></strong></span>
-      <p class="help-text"><%= t("budgets.investments.form.exchange_help") %></p>
+      <span><strong><%= t("budgets.investments.form.organization_title") %></strong></span>
+      <%= f.check_box :organization_checkbox,
+                      label: t("budgets.investments.form.organization_checkbox"),
+                      data: { toggle: "organization_input" } %>
 
-      <%= f.check_box :exchange_online, label: t("budgets.investments.form.exchange_online") %>
+      <div id="organization_input" class="small-12 <%= class_for_text_field(@investment.organization_checkbox) %>" data-toggler="hide">
+        <%= f.text_area :organization, maxlength: 500, rows: 3 %>
+      </div>
+    </div>
 
-      <%= f.check_box :exchange_offline,
-                      label: t("budgets.investments.form.exchange_offline"),
-                      data: {toggle: "exchange_offline_input" } %>
+    <div class="small-12 column margin-top">
+      <span><strong><%= t("budgets.investments.form.cooperation") %><strong></span>
+      <p class="help-text"><%= t("budgets.investments.form.cooperation_help") %></p>
 
-      <div id="exchange_offline_input" class="small-12 hide" data-toggler="hide">
-        <%= f.translatable_fields do |translations_form| %>
+      <%= f.check_box :share_online_checkbox,
+                      label: t("budgets.investments.form.share_online_checkbox"),
+                      data: { toggle: "share_online_input" } %>
 
-          <%= translations_form.text_area :exchange, label: false,
-              maxlength: 200, rows: 2,
-              hint: t("budgets.investments.form.exchange_offline_help") %>
-        <% end %>
+      <div id="share_online_input" class="small-12 <%= class_for_text_field(@investment.share_online_checkbox) %>" data-toggler="hide">
+        <%= f.text_area :share_online, maxlength: 200, rows: 3 %>
+      </div>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.check_box :share_offline_checkbox,
+                      label: t("budgets.investments.form.share_offline_checkbox"),
+                      data: { toggle: "share_offline_input" } %>
+
+      <div id="share_offline_input" class="small-12 <%= class_for_text_field(@investment.share_offline_checkbox) %>" data-toggler="hide">
+        <%= f.text_area :share_offline, maxlength: 200, rows: 3 %>
       </div>
     </div>
 

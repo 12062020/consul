@@ -228,12 +228,7 @@ ActiveRecord::Schema.define(version: 20200304195927) do
     t.text     "description"
     t.datetime "hidden_at"
     t.text     "summary"
-    t.text     "problem"
     t.text     "petition"
-    t.text     "organization"
-    t.text     "capacities"
-    t.text     "cooperation"
-    t.text     "exchange"
     t.index ["budget_investment_id"], name: "index_budget_investment_translations_on_budget_investment_id", using: :btree
     t.index ["hidden_at"], name: "index_budget_investment_translations_on_hidden_at", using: :btree
     t.index ["locale"], name: "index_budget_investment_translations_on_locale", using: :btree
@@ -280,6 +275,14 @@ ActiveRecord::Schema.define(version: 20200304195927) do
     t.datetime "ignored_flag_at"
     t.integer  "flags_count",                                 default: 0
     t.integer  "original_heading_id"
+    t.boolean  "recipient_petition"
+    t.boolean  "requirements_petition"
+    t.boolean  "organization_checkbox"
+    t.boolean  "share_online_checkbox"
+    t.boolean  "share_offline_checkbox"
+    t.text     "organization"
+    t.text     "share_online"
+    t.text     "share_offline"
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
     t.index ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
     t.index ["community_id"], name: "index_budget_investments_on_community_id", using: :btree

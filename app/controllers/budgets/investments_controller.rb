@@ -132,10 +132,9 @@ module Budgets
       end
 
       def investment_params
-        attributes = [:heading_id, :tag_list, :recipient_petition, :requirements_petition, :exchange_offline,
-                      :exchange_online, :organization_name, :location, :terms_of_service, :skip_map,
-                      image_attributes: image_attributes,
-                      documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+        attributes = [:heading_id, :tag_list, :recipient_petition, :requirements_petition, :organization_checkbox, :organization,
+                      :share_offline_checkbox, :share_offline, :share_online_checkbox, :share_online,
+                      :location, :terms_of_service, :skip_map, image_attributes: image_attributes,
                       map_location_attributes: [:latitude, :longitude, :zoom]]
         params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
       end

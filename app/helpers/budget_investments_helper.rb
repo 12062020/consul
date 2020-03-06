@@ -53,4 +53,12 @@ module BudgetInvestmentsHelper
   def show_author_actions?(investment)
     can?(:edit, investment) || can_destroy_image?(investment)
   end
+
+  def class_for_text_field(value)
+    if value
+      ""
+    else
+      "hide"
+    end
+  end
 end
