@@ -61,3 +61,8 @@
     <%= raw content_block("subnavigation_right", I18n.locale) %>
   </ul>
 </div>
+
+<% unless content_for?(:header_addon) %>
+  <%= link_to "www.12062020.de", "https://www.12062020.de",
+              class: "subnavigation-top-link", target: "_blank" %>
+<% end %>

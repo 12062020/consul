@@ -1,13 +1,249 @@
-// Overrides and adds customized styles in this file
-// Read more on documentation:
-// * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
-// * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
+// Custom styles
+//
+// 0. Variables
+// 1. General
+// 2. Homepage and custom pages
+// 3. Budgets
 //
 
+
+// 0. Variables
+// ------------------------------------
+
+$custom-brown:         #f9d2b0;
+$custom-brown-soft:    #f3ebe7;
+$custom-brown-light:   #e6dad1;
+$custom-yellow:        #f9c82b;
+$custom-blue:          #8dd0f1;
+$custom-orange:        #f2910f;
+
+// 1. General
+// ------------------------------------
+
+.top-links {
+  display: none;
+}
+
+header,
+.top-bar {
+  background: #fff !important;
+}
+
+.top-bar {
+
+  .menu > li a {
+    color: #000;
+  }
+
+  .dropdown.menu {
+
+    > li.is-active > a {
+      color: #000;
+    }
+
+    > li.is-dropdown-submenu-parent > a::after {
+      border-color: #000 transparent transparent;
+    }
+  }
+}
+
+.subnavigation {
+  background: $custom-brown-soft;
+
+  a {
+
+    &:hover,
+    &.is-active {
+      color: #000;
+    }
+
+    &.is-active {
+      border-bottom: 2px solid #000;
+    }
+  }
+}
+
+.subnavigation-top-link {
+  float: right;
+  font-size: $small-font-size;
+  font-weight: normal !important;
+  text-decoration: underline;
+}
+
+.footer {
+  background: $custom-brown-soft;
+}
+
+// 2. Homepage and custom pages
+// ------------------------------------
+
+.home-page {
+
+  .jumbo {
+    background: $custom-brown;
+    padding: $line-height * 2 0;
+
+    .button {
+      background: $custom-yellow;
+      color: #000;
+      font-weight: bold;
+    }
+  }
+
+  .background-header {
+    display: none;
+  }
+
+
+  h3 {
+
+    &.title {
+      border: 0;
+      font-size: rem-calc(36);
+    }
+  }
+}
+
+.home-page .figure-card .gradient,
+.custom-page .figure-card .gradient {
+  display: none;
+}
+
+.home-page .card a:hover:not(.see-all),
+.custom-page .card a:hover:not(.see-all) {
+  box-shadow: none;
+}
+
+.home-page .card a:hover img,
+.custom-page .card a:hover img {
+  filter: brightness(60%);
+  transform: none;
+}
+
+.custom-page {
+
+  .pages-cards {
+    border-left: 12px solid $custom-blue;
+    display: inline-block;
+    margin: rem-calc(80) 0 rem-calc(80) rem-calc(16);
+    position: relative;
+
+    &::before,
+    &::after {
+      color: $custom-blue;
+      content: "...";
+      font-size: rem-calc(100);
+      left: -20px;
+      position: absolute;
+      transform: rotate(90deg);
+    }
+
+    &::before {
+      top: -120px;
+    }
+
+    &::after {
+      bottom: -120px;
+    }
+  }
+
+  .card {
+    border: 40px solid #fff;
+    padding: rem-calc(40) rem-calc(20);
+    position: relative;
+
+    &::before {
+      background: $custom-brown-light;
+      border-radius: rem-calc(30);
+      content: "";
+      height: rem-calc(30);
+      left: -60px;
+      position: absolute;
+      top: 60px;
+      width: rem-calc(30);
+    }
+
+    h3 {
+      font-size: rem-calc(30);
+    }
+
+    .button {
+      background: $custom-yellow;
+      color: #000;
+      font-weight: bold;
+    }
+
+    &.active-phase-card {
+      background: $custom-brown-soft;
+      border: 40px solid $custom-brown;
+      padding: rem-calc(40) rem-calc(20);
+
+      &::before {
+        background: $custom-yellow;
+      }
+    }
+  }
+}
+
+
+// 3. Budgets
+// ------------------------------------
+
+.jumbo-budget {
+  background-color: $custom-orange;
+  background-image: image-url("header_background.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 0;
+
+  h2,
+  h3,
+  .back,
+  .icon-angle-left,
+  p,
+  a {
+    color: $text;
+  }
+}
 
 .budget-investment-new {
 
   .checkbox {
     font-size: $small-font-size;
+  }
+
+  .help-text {
+
+    a {
+      color: $custom-blue;
+    }
+  }
+
+  .button.hollow {
+    background: $custom-brown-light;
+    border-color: $custom-brown-light;
+    color: $text;
+  }
+
+  .actions {
+
+    .button {
+      background: $custom-yellow;
+      color: #000;
+      font-weight: bold;
+    }
+  }
+}
+
+.button {
+
+  &.expanded {
+
+    &.budget {
+      background: $custom-yellow;
+      color: #000;
+      font-weight: bold;
+    }
   }
 }

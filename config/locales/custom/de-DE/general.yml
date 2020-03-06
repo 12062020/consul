@@ -3,3 +3,7 @@ de:
     accept_terms: "Ich stimme der %{policy} und den %{conditions} zu. *"
   shared:
     follow_entity: "Diesem Petitionsvorschlag folgen"
+  welcome:
+    cards:
+      title: "Vorschläge nach Themenbereiche"
+      subtitle: "Informiere dich über eingegangene Vorschläge. informiere und vernetze dich"
