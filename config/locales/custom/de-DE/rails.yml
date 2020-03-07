@@ -2,3 +2,4 @@ de:
   helpers:
     submit:
       create: "Petitionsvorschlag veröffentlichen"
+      update: "Petitionsvorschlag aktualisieren"

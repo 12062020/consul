@@ -2,8 +2,16 @@ de:
   form:
     accept_terms: "Ich stimme der %{policy} und den %{conditions} zu. *"
   shared:
+    following: "Du folgst diesem Petitionsvorschlag"
     follow_entity: "Diesem Petitionsvorschlag folgen"
+    unfollow_entity: "Diesem Petitionsvorschlag nicht mehr folgen"
+    followable:
+      budget_investment:
+        create:
+          notice: "Du folgst nun diesem Petitionsvorschlag! Wir werden dich bei Änderungen benachrichtigen, sodass du immer auf dem Laufenden bleibst."
+        destroy:
+          notice: "Du hast aufgehört diesem Petitionsvorschlag zu folgen! Du wirst nicht länger Benachrichtigungen zu diesem Vorschlag erhalten."
   welcome:
     cards:
       title: "Vorschläge nach Themenbereiche"
-      subtitle: "Informiere dich über eingegangene Vorschläge. informiere und vernetze dich"
+      subtitle: "Informiere dich über eingegangene Vorschläge, diskutiere mit und vernetze dich"
