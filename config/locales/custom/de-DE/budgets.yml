@@ -36,6 +36,7 @@ de:
         exchange_online: "Ja, online über den in der vorherigen Frage angegebenen Kontakt"
         exchange_offline: "Ja, offline"
         exchange_offline_help: "In welchen Orten?"
+        tags_placeholder: 'Gib Schlagwörter ein, die du benutzen möchtest, getrennt durch Kommas (",")'
       show:
         description: "Begründung"
         summary: "Weiterführende Informationen"

@@ -3,6 +3,7 @@ de:
     users:
       registrations:
         new:
+          username_label: "Nutzer*innenname"
           username_note: "Name, der öffentlich neben deinen Beiträgen angezeigt wird. Bitte wähle einen Nutzer*innennamen, in dem dein vollständiger Klarname zu erkennen ist (freiwillig)."
           terms: "Mit der Registrierung akzeptierst du die %{terms}"
           terms_title: "Mit der Registrierung akzeptierst du die Allgemeinen Nutzungsbedingungen"

@@ -269,6 +269,17 @@ header,
       font-weight: bold;
     }
   }
+
+  .recommendations {
+
+    li {
+      font-weight: normal;
+    }
+  }
+}
+
+.budget-investment .investment-project-description {
+  font-size: $base-font-size;
 }
 
 .button {
