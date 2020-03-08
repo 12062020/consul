@@ -16,7 +16,9 @@
 
 <br>
 
-<%= render_image(investment.image, :large, true) if investment.image.present? %>
+<%= render_image(investment.image, :large, false) if investment.image.present? %>
+<div class="clear margin-bottom"></div>
+<hr>
 
 <strong><%= t("budgets.investments.show.petition") %></strong>
 <p><%= investment.petition %></p>

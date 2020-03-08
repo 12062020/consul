@@ -4,7 +4,7 @@
 
       <div class="row">
         <div class="small-12 column">
-          <%= back_link_to budgets_path %>
+          <%= back_link_to root_path %>
 
           <% if can? :show, @ballot %>
             <%= link_to t("budgets.investments.header.check_ballot"),
@@ -15,7 +15,7 @@
       </div>
 
       <div class="row progress-votes">
-        <div class="small-12 column">
+        <div class="small-12 medium-6 large-8 column relative">
           <% if can? :show, @ballot %>
             <div id="check-ballot" style="display: none;">
               <%= link_to t("budgets.investments.header.check_ballot"),
@@ -60,6 +60,10 @@
             <% end %>
           <% end %>
         </div>
+      </div>
+
+      <div class="image-banner">
+        <%= image_tag "header_background.png", alt: "" %>
       </div>
     </div>
   </section>

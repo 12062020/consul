@@ -4,6 +4,7 @@
 // 1. General
 // 2. Homepage and custom pages
 // 3. Budgets
+// 4. Active page
 //
 
 
@@ -51,6 +52,7 @@ header,
   background: $custom-brown-soft;
 
   a {
+    color: #000;
 
     &:hover,
     &.is-active {
@@ -72,6 +74,12 @@ header,
 
 .footer {
   background: $custom-brown-soft;
+}
+
+.menu-icon.dark:hover::after,
+.menu-icon.dark::after {
+  background: #000;
+  box-shadow: 0 7px 0 #000, 0 14px 0 #000;
 }
 
 // 2. Homepage and custom pages
@@ -185,17 +193,44 @@ header,
   }
 }
 
-
 // 3. Budgets
 // ------------------------------------
 
 .jumbo-budget {
   background-color: $custom-orange;
-  background-image: image-url("header_background.png");
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: contain;
   border: 0;
+  position: relative;
+  overflow: hidden;
+
+  @include breakpoint(medium) {
+
+    .tagline {
+      background-color: $custom-orange;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+
+  .image-banner {
+    text-align: right;
+
+    img {
+      max-height: rem-calc(140);
+    }
+  }
+
+  @include breakpoint(large) {
+
+    .image-banner {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      img {
+        max-height: none;
+      }
+    }
+  }
 
   h2,
   h3,
@@ -246,4 +281,17 @@ header,
       font-weight: bold;
     }
   }
+}
+
+// 4. Active page
+// ------------------------------------
+
+.homepage-active a.page-0,
+.ablauf-active a.page-1,
+.infos-active a.page-2,
+.expertinnen-active a.page-3,
+span[class*="-infos"] a.page-4,
+.netiquette-active a.page-5,
+.hilfe-active a.page-6 {
+  border-bottom: 2px solid #000;
 }

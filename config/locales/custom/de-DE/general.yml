@@ -1,6 +1,11 @@
 de:
   form:
     accept_terms: "Ich stimme der %{policy} und den %{conditions} zu. *"
+    not_saved: "verhinderte das Speichern dieses %{resource}. <br>Bitte überprüfe die gekennzeichneten Felder, um herauszufinden, wie diese korrigiert werden können."
+  comments:
+    form:
+      leave_comment: "Schreibe einen Kommentar zu diesem Vorschlag"
+      leave_comment_help: "Bitte überprüfe bevor du den Kommentar veröffentlichst, dass er sich nur auf diesen Petitionsvorschlag bezieht. Siehe dazu auch die Netiquette."
   shared:
     following: "Du folgst diesem Petitionsvorschlag"
     follow_entity: "Diesem Petitionsvorschlag folgen"

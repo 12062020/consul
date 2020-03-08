@@ -10,6 +10,8 @@ module CommentsHelper
   def leave_comment_text(commentable)
     if commentable.class == Legislation::Question
       t("legislation.questions.comments.form.leave_comment")
+    elsif commentable.class == Topic
+      "Schreibe einen Kommentar"
     else
       t("comments.form.leave_comment")
     end

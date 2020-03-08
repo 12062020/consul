@@ -1,6 +1,12 @@
 <div class="small-12 medium-9 column">
   <ul>
-    <%= raw content_block("subnavigation_left", I18n.locale) %>
+    <% path_left = request.path %>
+    <% path_left.slice!(0) %>
+    <span class="<%= path_left %>-active">
+      <span class="<%= "homepage-active" if current_page?(root_path) %>">
+        <%= raw content_block("subnavigation_left", I18n.locale) %>
+      </span>
+    </span>
 
     <% if feature?(:debates) %>
       <li>
@@ -57,8 +63,13 @@
                                 title: t("shared.go_to_page") + t("layouts.header.help") %>
       </li>
     <% end %>
-
-    <%= raw content_block("subnavigation_right", I18n.locale) %>
+    <% path_right = request.path %>
+    <% path_right.slice!(0) %>
+    <span class="<%= path_right %>-active">
+      <span class="<%= "homepage-active" if current_page?(root_path) %>">
+        <%= raw content_block("subnavigation_right", I18n.locale) %>
+      </span>
+    </span>
   </ul>
 </div>
 
