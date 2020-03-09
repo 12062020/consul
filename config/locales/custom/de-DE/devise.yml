@@ -1,0 +1,6 @@
+de:
+  devise:
+    confirmations:
+      confirmed: "Dein Konto wurde bestätigt."
+    registrations:
+      signed_up_but_unconfirmed: "Du hast eine Nachricht mit einem Bestätigungslink erhalten. Klicke bitte auf diesen Link, um dein Konto zu aktivieren."
