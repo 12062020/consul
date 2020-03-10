@@ -19,6 +19,10 @@ de:
         capacities: "Kapazitäten (Antwort nicht öffentlich) *"
         cooperation: "Unterstützung und Kooperation"
       user:
+        first_name: "Vorname *"
+        last_name: "Nachname *"
+        plz: "PLZ"
+        ort: "Ort"
         username: "Nutzer*innenname"
         public_interests: "Die Petitionsvorschläge, denen ich folge, auf meinem Profil anzeigen"
         email_on_comment: "Per E-Mail benachrichtigt werden, wenn jemand meine Vorschläge oder Diskussionen kommentiert"

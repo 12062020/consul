@@ -328,6 +328,10 @@ span[class*="-infos"] a.page-4,
 
 .auth-image {
   background: $custom-brown;
+
+  @include breakpoint(medium) {
+    min-height: rem-calc(1300);
+  }
 }
 
 .auth-form {

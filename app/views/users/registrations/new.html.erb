@@ -12,9 +12,30 @@
       <%= f.hidden_field :use_redeemable_code %>
       <%= f.hidden_field :locale, value: I18n.locale %>
 
-      <%= f.text_field :username,  autofocus: true, maxlength: User.username_max_length,
-                                   placeholder: t("devise_views.users.registrations.new.username_label"),
-                                   hint: t("devise_views.users.registrations.new.username_note") %>
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :first_name, maxlength: 60 %>
+        </div>
+
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :last_name, maxlength: 60 %>
+        </div>
+      </div>
+
+      <%= f.text_field :username, maxlength: User.username_max_length,
+                                  placeholder: t("devise_views.users.registrations.new.username_label"),
+                                  hint: t("devise_views.users.registrations.new.username_note") %>
+
+      <div class="row">
+        <div class="small-12 medium-6 large-3 column">
+          <%= f.text_field :plz, type: "number", max: "99999", onkeypress: "if (this.value.length > 4) return false;" %>
+        </div>
+
+        <div class="small-12 medium-6 large-9 column end ">
+          <%= f.text_field :ort, maxlength: 60 %>
+        </div>
+      </div>
+
 
       <%= f.invisible_captcha :address %>
 
@@ -26,6 +47,15 @@
       <%= f.password_field :password_confirmation, autocomplete: "off",
                            label: t("devise_views.users.registrations.new.password_confirmation_label"),
                            placeholder: t("devise_views.users.registrations.new.password_confirmation_label") %>
+
+      <%= f.check_box :area,
+                      label: t("devise_views.users.registrations.new.area"),
+                      title: t("devise_views.users.registrations.new.area") %>
+
+      <%= f.check_box :marketing,
+                      label: t("devise_views.users.registrations.new.marketing"),
+                      title: t("devise_views.users.registrations.new.marketing") %>
+      <p class="help-text"><%= t("devise_views.users.registrations.new.marketing_help") %></p>
 
       <% if resource.use_redeemable_code %>
         <%= f.text_field :redeemable_code, placeholder: t("devise_views.users.registrations.new.redeemable_code") %>
