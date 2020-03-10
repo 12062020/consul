@@ -198,10 +198,25 @@ header,
 // ------------------------------------
 
 .jumbo-budget {
-  background-color: $custom-orange;
   border: 0;
   position: relative;
   overflow: hidden;
+
+  &.header-andere {
+    background-color: $custom-orange;
+  }
+
+  &.header-demokratie {
+    background-color: $custom-blue;
+  }
+
+  &.header-klima-und-biodiversitat {
+    background-color: #bfcd47;
+  }
+
+  &.header-soziale-gerechtigkeit {
+    background-color: #dfb0c7;
+  }
 
   @include breakpoint(medium) {
 

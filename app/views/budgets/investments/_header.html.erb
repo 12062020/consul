@@ -1,6 +1,6 @@
 <% if @heading.present? %>
   <section class="no-margin-top margin-bottom">
-    <div class="expanded jumbo-budget budget-heading padding">
+    <div class="expanded jumbo-budget budget-heading padding header-<%= @heading.name.parameterize %>">
 
       <div class="row">
         <div class="small-12 column">
@@ -63,7 +63,7 @@
       </div>
 
       <div class="image-banner">
-        <%= image_tag "header_background.png", alt: "" %>
+        <%= image_tag "header-#{@heading.name.parameterize}.png", alt: "" %>
       </div>
     </div>
   </section>
