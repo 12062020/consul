@@ -101,12 +101,8 @@
           title: investment.title,
           image_url: image_absolute_url(investment.image, :thumb),
           url: budget_investment_url(investment.budget, investment),
-          description: t("budgets.investments.share.message",
-                          title: investment.title,
-                          handle: setting["org_name"]),
-          mobile: t("budgets.investments.share.message",
-                     title: investment.title,
-                     handle: setting["twitter_handle"]) %>
+          description: t("budgets.investments.share.message"),
+          mobile: t("budgets.investments.share.message") %>
 
         <% if current_user %>
           <div class="sidebar-divider"></div>

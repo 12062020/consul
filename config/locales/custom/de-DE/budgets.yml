@@ -37,6 +37,8 @@ de:
         exchange_offline: "Ja, offline"
         exchange_offline_help: "In welchen Orten?"
         tags_placeholder: 'Gib Schlagwörter ein, die du benutzen möchtest, getrennt durch Kommas (",")'
+      share:
+        message: "Ich habe einen Petitionsvorschlag für 12062020 Olympia eingereicht!"
       show:
         description: "Begründung"
         summary: "Weiterführende Informationen"

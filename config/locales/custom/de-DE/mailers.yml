@@ -3,3 +3,9 @@ de:
     budget_investment_created:
       subject: "Danke, dass du einen Petitionsvorschlag eingereicht hast!"
       title: "Danke, dass du einen Petitionsvorschlag eingereicht hast!"
+    direct_message_for_receiver:
+      subject: "Du hast eine neue persönliche Nachricht erhalten"
+    reply:
+      subject: "Jemand hat auf Deinen Kommentar geantwortet"
+    comment:
+      subject: "Jemand hat Deinen %{commentable} kommentiert"

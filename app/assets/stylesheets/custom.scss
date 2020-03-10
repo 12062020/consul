@@ -5,6 +5,7 @@
 // 2. Homepage and custom pages
 // 3. Budgets
 // 4. Active page
+// 5. Devise views
 //
 
 
@@ -305,4 +306,32 @@ span[class*="-infos"] a.page-4,
 .netiquette-active a.page-5,
 .hilfe-active a.page-6 {
   border-bottom: 2px solid #000;
+}
+
+// 5. Devise views
+// ------------------------------------
+
+.auth-image {
+  background: $custom-brown;
+}
+
+.auth-form {
+
+  .button {
+    background: $custom-yellow;
+    color: #000;
+    font-weight: bold;
+
+    &.button-twitter {
+      background: #ecf7fc;
+    }
+
+    &.button-google {
+      background: #fcedea;
+    }
+
+    &.button-facebook {
+      background: #ebeef4;
+    }
+  }
 }
