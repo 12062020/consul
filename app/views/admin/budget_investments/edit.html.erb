@@ -111,6 +111,8 @@
         value: @investment.milestone_tag_list.sort.join(", ") %>
     </div>
 
+    <%= f.hidden_field :terms_of_service, value: "1" %>
+
     <div class="small-12 column margin-top">
       <%= f.submit(class: "button", value: t("admin.budget_investments.edit.submit_button")) %>
     </div>
