@@ -3,7 +3,7 @@
     <% path_left = request.path %>
     <% path_left.slice!(0) %>
     <span class="<%= path_left %>-active">
-      <span class="<%= "homepage-active" if current_page?(root_path) %>">
+      <span class="<%= "homepage-active" if homepage_or_budgets? %>">
         <%= raw content_block("subnavigation_left", I18n.locale) %>
       </span>
     </span>
