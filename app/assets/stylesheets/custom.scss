@@ -221,9 +221,24 @@ header,
   @include breakpoint(medium) {
 
     .tagline {
-      background-color: $custom-orange;
       position: absolute;
       z-index: 1;
+    }
+
+    &.header-andere .tagline {
+      background-color: $custom-orange;
+    }
+
+    &.header-demokratie .tagline {
+      background-color: $custom-blue;
+    }
+
+    &.header-klima-und-biodiversitat .tagline {
+      background-color: #bfcd47;
+    }
+
+    &.header-soziale-gerechtigkeit .tagline {
+      background-color: #dfb0c7;
     }
   }
 

@@ -2,7 +2,7 @@ de:
   budgets:
     investments:
       index:
-        by_heading: "Petitionsvorschläge: %{heading}"
+        by_heading: "%{heading}"
         orders:
           newest: "Neueste zuerst"
           oldest: "Älteste zuerst"
