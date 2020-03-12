@@ -5,11 +5,13 @@ de:
         new:
           username_label: "Nutzer*innenname"
           username_note: "Name, der öffentlich neben deinen Beiträgen angezeigt wird. Bitte wähle einen Nutzer*innennamen, in dem dein vollständiger Klarname zu erkennen ist (freiwillig)."
-          terms: "Mit der Registrierung akzeptierst du die %{terms}"
-          terms_title: "Mit der Registrierung akzeptierst du die Allgemeinen Nutzungsbedingungen"
-          area: "Ich habe Lust mich in meiner Gegend mit anderen, die hier aktiv sind, zu vernetzen."
-          marketing: "Hiermit willige ich ein, dass ich bezüglich der Veranstaltung am 12. Juni 2020 im Olympiastadion in Berlin"
-          marketing_help: "Damit verbundene anderen Veranstaltungen und generellen Informationen zu Beteiligungsmöglichkeiten von Mehr Demokratie e.V. und seinen Partnern per E-Mail kontaktiert werden kann. Diese Einwilligung kann ich jederzeit gegenüber Mehr Demokratie e.V. widerrufen."
+          terms: "Mit der Registrierung akzeptiere ich die %{terms} und die %{privacy}"
+          terms_title: "Mit der Registrierung akzeptiere ich die Allgemeinen Nutzungsbedingungen und die Datenschutzbestimmungen"
+          terms_link: "Allgemeinen Nutzungsbedingungen"
+          privacy_link: "Datenschutzbestimmungen"
+          area: "Ich habe Lust mich in meiner Gegend mit anderen Nutzer*innen zu vernetzen."
+          marketing_olympia: "Ich möchte über den Ablauf des Projekts 12062020 und anschließenden Aktivitäten vom 12062020 Olympia-Team informiert werden."
+          marketing: "Ich möchte über diese und weitere Aktivitäten von Mehr Demokratie e. V. informiert werden."
         success:
           back_to_index: "Verstanden - zurück zur Startseite"
           thank_you: "Danke für die Registrierung. Nun musst du nur noch deine E-Mail-Adresse bestätigen."

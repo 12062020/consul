@@ -12,7 +12,8 @@
         <th scope="col">PLZ</th>
         <th scope="col">Ort</th>
         <th scope="col">Gegend</th>
-        <th scope="col">E-Mail kontaktiert</th>
+        <th scope="col">Aktivitäten Olympia-Team</th>
+        <th scope="col">Aktivitäten Mehr Demokratie</th>
         <th scope="col"><%= t("admin.users.columns.roles") %></th>
         <th scope="col"><%= t("admin.users.columns.verification_level") %></th>
       </tr>
@@ -41,6 +42,13 @@
           </td>
           <td>
             <% if user.area.present? %>
+              Yes
+            <% else %>
+              No
+            <% end %>
+          </td>
+          <td>
+            <% if user.marketing_olympia.present? %>
               Yes
             <% else %>
               No
