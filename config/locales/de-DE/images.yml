@@ -5,7 +5,7 @@ de:
       title: Aussagekräftiges Bild
       title_placeholder: Fügen Sie einen aussagekräftigen Titel zu diesem Bild hinzu
       delete_button: Bild entfernen
-      note: "Sie können ein Bild des folgenden Formats hochladen: %{accepted_content_types}, bis zu %{max_file_size} MB."
+      note: "Du kannst ein Bild des folgenden Formats hochladen: %{accepted_content_types}, bis zu %{max_file_size} MB. Bitte lade nur Bilder hoch, an denen Dritte keine Urheberrechte haben."
       add_new_image: Bild hinzufügen
       admin_title: "Bild"
       admin_alt_text: "Alternativer Text für das Bild"

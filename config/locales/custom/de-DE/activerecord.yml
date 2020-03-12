@@ -30,3 +30,4 @@ de:
         email_on_comment: "Per E-Mail benachrichtigt werden, wenn jemand meine Vorschläge oder Diskussionen kommentiert"
         newsletter: "Per E-Mail weitere relevante Informationen erhalten"
         email_digest: "Benachrichtigungen mit Zusammenfassungen von Vorschlägen erhalten"
+        email_on_direct_message: "Direkte Nachrichten anderer Nutzer*innen erlauben. Diese werden per E-Mail an Dich geschickt."
