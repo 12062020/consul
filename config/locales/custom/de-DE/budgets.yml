@@ -16,7 +16,7 @@ de:
         recipient_petition: "Nach meiner Einschätzung ist der Bundestag der Rezipient für die Petition *"
         recipient_petition_help: "Die Petitionen, die am 12.06.2020 auf der Bühne des Olympiastadions vorgestellt werden, werden zuvor beim Bundestag eingereicht. Daher sollte der Bundestag zuständig für das Thema deiner Petition sein. Es gibt viele wichtige Themen, für die der Bundestag nicht zuständig ist. Wenn du einen Vorschlag hast, für den nicht der Bundestag zuständig ist, schicke ihn bitte an %{link}. Wir werden versuchen, soweit möglich, mit unseren Partnern zu prüfen, wie wir diesen am 12.06.2020 berücksichtigen können. Garantieren können wir dieses jedoch nicht."
         recipient_petition_link: "petitionen@12062020.de"
-        requirements_petition: "Nach meiner Einschätzung erfüllt der Vorschlag die Anforderungen einer einer öffentlichen Bundestagspetition. *"
+        requirements_petition: "Nach meiner Einschätzung erfüllt der Vorschlag die Anforderungen einer öffentlichen Bundestagspetition. *"
         requirements_petition_help: "Die Anforderungen findest du in der %{link}."
         requirements_petition_link: "Richtlinie für öffentliche Petitionen"
         description_help: "Bitte begründe deinen Vorschlag (3000 Zeichen)"
