@@ -369,7 +369,14 @@ span[class*="-infos"] a.page-4,
     }
   }
 
+  .signup-terms {
+    font-size: $small-font-size;
+    font-weight: normal;
+  }
+
+  .signup-terms,
   .checkbox {
+    padding-bottom: $line-height / 2;
     vertical-align: top;
     width: 90%;
   }

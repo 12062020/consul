@@ -7,7 +7,8 @@ de:
   comments:
     form:
       leave_comment: "Schreibe einen Kommentar zu diesem Vorschlag"
-      leave_comment_help: "Bitte überprüfe bevor du den Kommentar veröffentlichst, dass er sich nur auf diesen Petitionsvorschlag bezieht. Siehe dazu auch die Netiquette."
+      leave_comment_help: "Bitte überprüfe, bevor Du den Kommentar veröffentlichst, dass er sich nur auf diesen Petitionsvorschlag bezieht. Siehe dazu auch die %{link}."
+      leave_comment_link: "Netiquette"
   shared:
     following: "Du folgst diesem Petitionsvorschlag"
     follow_entity: "Diesem Petitionsvorschlag folgen"

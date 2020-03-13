@@ -5,14 +5,52 @@
   </h1>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("devise_views.mailer.confirmation_instructions.welcome") %> <strong><%= @email %></strong>
+    Hallo <strong><%= @email %></strong>,<br>
+    vielen Dank, dass Du bei 12062020 Olympia aktiv wirst. Dein Engagement entscheidet, welche Aufmerksamkeit die Petitionen erzeugen und ob wir gesellschaftliche Änderungen anstoßen können.
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("devise_views.mailer.confirmation_instructions.text") %>
+    <strong>Bestätige Deine Registrierung per Klick auf den nachfolgenden Link:</strong>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
     <%= link_to t("devise_views.mailer.confirmation_instructions.confirm_link"), confirmation_url(@resource, confirmation_token: @token), style: "color: #2895F1; text-decoration:none;" %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  Soweit Du bei der Registrierung angegeben hast, dass Du über das Projekt 12062020 und anschließende Aktivitäten vom 12062020 Olympia-Team und von Mehr Demokratie e. V. informiert werden möchtest, bestätigst Du auch dies mit Klick auf den obigen Link. Die Newsletter kannst Du natürlich jederzeit abbestellen.</p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  Das 12062020 Olympia-Team und Mehr Demokratie e.V. organisieren gemeinsam die Phase 1, bei der online Petitionsvorschläge eingereicht werden können. Das 12062020 Olympia-Team organisiert den weiteren Prozess bis zum 12.06.2020, Mehr Demokratie e.V. stellt als Kooperationspartner die Petitionsplattform für den Auswahlprozess der Vorschläge bereit.
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    Vielen Dank und herzliche Grüße!<br>
+    Die Teams von<br>
+    12062020 Olympia + Mehr Demokratie e. V.</p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 11px;font-weight: normal;line-height: 24px;">
+  <strong>Datenschutzhinweis:</strong><br>
+  Weitere Informationen entnehme bitte unserer <a href="https://petitionen.12062020.de/privacy" target="_blank">Datenschutzerklärung</a> bzw. der <a href="https://www.mehr-demokratie.de/datenschutz/" target="_blank">Datenschutzerklärung</a> von Mehr Demokratie e.V..
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 11px;font-weight: normal;line-height: 24px;">
+    Impressum
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 11px;font-weight: normal;line-height: 24px;">
+    Für die Aktion 12062020 Olympia<br>
+    Mehr Demokratie e.V.:<br>
+    Greifswalder Str. 4 | 10405 Berlin<br>
+    info@mehr-demokratie.de<br>
+    Tel.: +49 30 4208 2370
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 11px;font-weight: normal;line-height: 24px;">
+    Geschäftsführender Bundesvorstand: Roman Huber<br>
+    Kassenwart: Alexander Trennheuser<br>
+    Eintragung im Vereinsregister<br>
+    Registergericht: Amtsgericht Bonn<br>
+    Register-Nummer: 5707
   </p>
 </td>

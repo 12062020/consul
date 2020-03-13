@@ -10,8 +10,10 @@ de:
           terms_link: "Allgemeinen Nutzungsbedingungen"
           privacy_link: "Datenschutzbestimmungen"
           area: "Ich habe Lust mich in meiner Gegend mit anderen Nutzer*innen zu vernetzen."
-          marketing_olympia: "Ich möchte über den Ablauf des Projekts 12062020 und anschließenden Aktivitäten vom 12062020 Olympia-Team informiert werden."
-          marketing: "Ich möchte über diese und weitere Aktivitäten von Mehr Demokratie e. V. informiert werden."
+          marketing_olympia: "Ja, ich will Informationen!<br>Und deswegen möchte ich über den Ablauf des Projekts 12062020 und weitere Aktivitäten vom 12062020 Olympia-Team sowie von Mehr Demokratie e.V. informiert werden."
+          marketing_olympia_title: "Ja, ich will Informationen! Und deswegen möchte ich über den Ablauf des Projekts 12062020 und weitere Aktivitäten vom 12062020 Olympia-Team sowie von Mehr Demokratie e.V. informiert werden."
+          marketing: "Ich möchte wenig Informationen!<br>Ich möchte nur über den Ablauf des Projekts 12062020 vom 12062020 Olympia-Team informiert werden."
+          marketing_title: "Ich möchte wenig Informationen! Ich möchte nur über den Ablauf des Projekts 12062020 vom 12062020 Olympia-Team informiert werden."
         success:
           back_to_index: "Verstanden - zurück zur Startseite"
           thank_you: "Danke für die Registrierung. Nun musst du nur noch deine E-Mail-Adresse bestätigen."
@@ -20,3 +22,6 @@ de:
     shared:
       links:
         new_confirmation: "Hast du keine Anweisungen zur Aktivierung deines Kontos erhalten?"
+    mailer:
+      confirmation_instructions:
+        confirm_link: "Meine Registrierung bestätigen"
