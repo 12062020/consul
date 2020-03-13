@@ -258,7 +258,7 @@ class User < ApplicationRecord
       erased_at: Time.current,
       erase_reason: erase_reason,
       username: nil,
-      email: nil,
+      email: "erased@mail.com",
       unconfirmed_email: nil,
       phone_number: nil,
       encrypted_password: "",
@@ -266,7 +266,9 @@ class User < ApplicationRecord
       reset_password_token: nil,
       email_verification_token: nil,
       confirmed_phone: nil,
-      unconfirmed_phone: nil
+      unconfirmed_phone: nil,
+      first_name: "Erased First name",
+      last_name: "Erased Last name"
     )
     identities.destroy_all
   end
