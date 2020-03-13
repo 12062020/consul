@@ -22,6 +22,3 @@ de:
     shared:
       links:
         new_confirmation: "Hast du keine Anweisungen zur Aktivierung deines Kontos erhalten?"
-    mailer:
-      confirmation_instructions:
-        confirm_link: "Meine Registrierung bestätigen"
