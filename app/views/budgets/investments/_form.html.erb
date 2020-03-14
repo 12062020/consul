@@ -70,13 +70,11 @@
     <% end %>
 
     <%= f.invisible_captcha :subtitle %>
-    <!-- Hide temporally upload images -->
-    <% if false %>
+
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
         <%= render "images/nested_image", imageable: @investment, f: f %>
       </div>
-    <% end %>
     <% end %>
 
     <% if feature?(:map) %>
