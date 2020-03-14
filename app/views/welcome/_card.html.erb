@@ -1,5 +1,5 @@
 <div id="<%= dom_id(card) %>"
-     class="card small-12 medium-<%= card.columns %> column margin-bottom end" data-equalizer-watch>
+     class="card small-12 medium-<%= card.columns %> column margin-bottom end">
   <% if card.link_url.present? %>
     <%= link_to card.link_url do %>
       <%= render "card_content", card: card %>
