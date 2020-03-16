@@ -14,25 +14,26 @@
 
       <div class="row">
         <div class="small-12 medium-6 column">
-          <%= f.text_field :first_name, maxlength: 60 %>
+          <%= f.text_field :first_name, autocomplete: "disabled", maxlength: 60 %>
         </div>
 
         <div class="small-12 medium-6 column">
-          <%= f.text_field :last_name, maxlength: 60 %>
+          <%= f.text_field :last_name, autocomplete: "disabled", maxlength: 60 %>
         </div>
       </div>
 
-      <%= f.text_field :username, maxlength: User.username_max_length,
+      <%= f.text_field :username, maxlength: User.username_max_length, autocomplete: "disabled",
                                   placeholder: t("devise_views.users.registrations.new.username_label"),
                                   hint: t("devise_views.users.registrations.new.username_note") %>
 
       <div class="row">
         <div class="small-12 medium-6 large-3 column">
-          <%= f.text_field :plz, type: "number", max: "99999", onkeypress: "if (this.value.length > 4) return false;" %>
+          <%= f.text_field :plz, type: "number", max: "99999", autocomplete: "disabled",
+                           onkeypress: "if (this.value.length > 4) return false;" %>
         </div>
 
         <div class="small-12 medium-6 large-9 column end ">
-          <%= f.text_field :ort, maxlength: 60 %>
+          <%= f.text_field :ort, autocomplete: "disabled", maxlength: 60 %>
         </div>
       </div>
 
