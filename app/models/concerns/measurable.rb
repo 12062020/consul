@@ -19,7 +19,7 @@ module Measurable
     end
 
     def description_max_length
-      3000
+      4000
     end
   end
 end
