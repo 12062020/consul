@@ -1,7 +1,13 @@
 <div class="row">
   <div class="pages-cards">
-    <% @cards.find_each do |card| %>
-      <%= render "card", card: card %>
+    <% if @custom_page.slug == "aktuelles" %>
+      <% @cards.reverse_each do |card| %>
+        <%= render "card", card: card %>
+      <% end %>
+    <% else %>
+      <% @cards.find_each do |card| %>
+        <%= render "card", card: card %>
+      <% end %>
     <% end %>
   </div>
 </div>
