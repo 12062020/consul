@@ -222,6 +222,10 @@ header,
     background-color: #dfb0c7;
   }
 
+  &.header-zeit-nach-corona {
+    background-color: #f9d2b1;
+  }
+
   @include breakpoint(medium) {
 
     .tagline {
