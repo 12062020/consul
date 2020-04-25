@@ -3,6 +3,8 @@ section "Creating Users" do
     password = "12345678"
     User.create!(
       username:               username,
+      first_name:             username,
+      last_name:              username,
       email:                  email,
       password:               password,
       password_confirmation:  password,
