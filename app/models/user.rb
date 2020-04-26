@@ -176,6 +176,10 @@ class User < ApplicationRecord
     votes.for_budget_investments(Budget::Investment.where(group: group)).exists?
   end
 
+  def investments_voted_within_heading(heading)
+    voted_investments.by_heading(heading).pluck(:id)
+  end
+
   def headings_voted_within_group(group)
     Budget::Heading.where(id: voted_investments.by_group(group).pluck(:heading_id))
   end

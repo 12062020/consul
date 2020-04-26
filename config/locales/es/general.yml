@@ -877,6 +877,7 @@ es:
       different_heading_assigned:
         one: "Sólo puedes apoyar proyectos de gasto de %{count} distrito. Ya has apoyado en %{supported_headings}."
         other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos. Ya has apoyado en %{supported_headings}."
+      maximum_votes_per_heading_reached: "Ya has alcanzado el número máximo de propuestas que puedes apoyar."
   welcome:
     feed:
       most_active:

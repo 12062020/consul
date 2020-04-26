@@ -879,6 +879,7 @@ en:
       different_heading_assigned:
         one: "You can only support investment projects in %{count} district. You have already supported investments in %{supported_headings}."
         other: "You can only support investment projects in %{count} districts. You have already supported investments in %{supported_headings}."
+      maximum_votes_per_heading_reached: "You have already reached the maximum number of proposals you can support."
   welcome:
     feed:
       most_active:

@@ -36,3 +36,6 @@ de:
       user_permission_proposal: "Neue Vorschläge erstellen"
       user_permission_votes: "An der Abstimmung teilnehmen"
       user_permission_verify: "Damit du alle Funktionen nutzen kannst, musst du dein Konto verifizieren."
+  votes:
+    budget_investments:
+      maximum_votes_per_heading_reached: "Du hast bereits die maximale Anzahl an Petitionsvorschlägen unterstützt."
