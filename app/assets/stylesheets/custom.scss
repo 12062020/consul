@@ -6,8 +6,8 @@
 // 3. Budgets
 // 4. Active page
 // 5. Devise views
+// 6. Polls
 //
-
 
 // 0. Variables
 // ------------------------------------
@@ -394,5 +394,48 @@ span[class*="-infos"] a.page-4,
 
   .checkbox {
     font-size: $small-font-size;
+  }
+}
+
+// 6. Polls
+// ------------------------------------
+
+.poll-question-answers .button {
+  background: #e6dad1;
+  border: 0 !important;
+  color: #000 !important;
+
+  &:hover {
+    background: #e6dad1;
+  }
+
+  @include breakpoint(medium) {
+    display: table;
+    text-align: left;
+  }
+
+  @include breakpoint(large) {
+    min-width: 630px;
+  }
+
+  &.answered {
+    background: #fbc11d;
+
+    &::after {
+      background-color: transparent;
+      background-image: image-url("answer_selected.png");
+      content: "";
+      height: rem-calc(36);
+      right: -12px;
+      top: -12px;
+      width: rem-calc(36);
+    }
+  }
+}
+
+.poll-question {
+
+  @include breakpoint(medium) {
+    max-width: 700px;
   }
 }
