@@ -39,3 +39,6 @@ de:
   votes:
     budget_investments:
       maximum_votes_per_heading_reached: "Du hast bereits die maximale Anzahl an Petitionsvorschlägen unterstützt."
+  polls:
+    show:
+      back: "Zurück zur Projektübersicht"
