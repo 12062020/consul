@@ -265,7 +265,6 @@ class Budget
     def reason_for_not_being_selectable_by(user)
       return permission_problem(user) if permission_problem?(user)
       return :different_heading_assigned unless valid_heading?(user)
-      return :maximum_votes_per_heading_reached if maximum_votes_per_heading_reached?(user)
 
       return :no_selecting_allowed unless budget.selecting?
     end
@@ -293,10 +292,6 @@ class Budget
 
     def selectable_by?(user)
       reason_for_not_being_selectable_by(user).blank?
-    end
-
-    def maximum_votes_per_heading_reached?(user)
-      user.investments_voted_within_heading(heading).count >= 3
     end
 
     def valid_heading?(user)
