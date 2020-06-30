@@ -4,9 +4,16 @@
   <table>
     <thead>
       <tr>
+        <th scope="col">Vorname</th>
+        <th scope="col">Nachname</th>
         <th scope="col"><%= t("admin.users.columns.name") %></th>
         <th scope="col"><%= t("admin.users.columns.email") %></th>
         <th scope="col"><%= t("admin.users.columns.document_number") %></th>
+        <th scope="col">PLZ</th>
+        <th scope="col">Ort</th>
+        <th scope="col">Gegend</th>
+        <th scope="col">Aktivitäten Olympia-Team</th>
+        <th scope="col">Aktivitäten Mehr Demokratie</th>
         <th scope="col"><%= t("admin.users.columns.roles") %></th>
         <th scope="col"><%= t("admin.users.columns.verification_level") %></th>
       </tr>
@@ -14,9 +21,46 @@
     <tbody>
       <% @users.each do |user| %>
         <tr>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
           <td><%= link_to user.name, user_path(user), target: "_blank" %></td>
           <td><%= user.email %></td>
           <td><%= user.document_number %></td>
+          <td>
+            <% if user.plz.present? %>
+              <%= user.plz %>
+            <% else %>
+              ---
+            <% end %>
+          </td>
+          <td>
+            <% if user.ort.present? %>
+              <%= user.ort %>
+            <% else %>
+              ---
+            <% end %>
+          </td>
+          <td>
+            <% if user.area.present? %>
+              Yes
+            <% else %>
+              No
+            <% end %>
+          </td>
+          <td>
+            <% if user.marketing_olympia.present? %>
+              Yes
+            <% else %>
+              No
+            <% end %>
+          </td>
+          <td>
+            <% if user.marketing.present? %>
+              Yes
+            <% else %>
+              No
+            <% end %>
+          </td>
           <td><%= display_user_roles(user) %></td>
           <td><%= user.user_type %></td>
         </tr>

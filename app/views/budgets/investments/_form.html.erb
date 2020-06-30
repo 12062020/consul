@@ -3,6 +3,26 @@
   <%= render "shared/errors", resource: @investment %>
 
   <div class="row column">
+
+    <div class="small-12 column">
+      <%= f.check_box :recipient_petition, label: t("budgets.investments.form.recipient_petition") %>
+      <p class="help-text">
+        <%= sanitize(t("budgets.investments.form.recipient_petition_help",
+            link: link_to(t("budgets.investments.form.recipient_petition_link"),
+                          "mailto:petitionen@12062020.de"))) %>
+      </p>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.check_box :requirements_petition, label: t("budgets.investments.form.requirements_petition") %>
+      <p class="help-text">
+        <%= sanitize(t("budgets.investments.form.requirements_petition_help",
+                       link: link_to(t("budgets.investments.form.requirements_petition_link"),
+                             "https://epetitionen.bundestag.de/epet/service.$$$.rubrik.richtlinie.html",
+                             target: "_blank")), attributes: %w[href target]) %>
+      </p>
+    </div>
+
     <div class="small-12 medium-8 column">
       <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true, } %>
     </div>
@@ -16,6 +36,7 @@
       <div class="small-12 column">
         <%= translations_form.text_field :title,
               maxlength: Budget::Investment.title_max_length,
+              placeholder: "Formuliere einen kurzen und prägnanten Titel",
               data: { js_suggest_result: "js_suggest_result",
                       js_suggest: ".js-suggest",
                       js_url: suggest_budget_investments_path(@budget) } %>
@@ -23,8 +44,27 @@
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
       <div class="small-12 column">
-        <%= translations_form.text_area :description,
+        <%= translations_form.text_area :petition,
+            maxlength: 500, rows: 3,
+            placeholder: t("budgets.investments.form.petition_placeholder"),
+              hint: t("budgets.investments.form.petition_help") %>
+      </div>
+
+      <div class="small-12 column">
+        <%= translations_form.label :description %>
+        <p class="help-text"><%= t("budgets.investments.form.description_help") %></p>
+
+        <%= translations_form.text_area :description, label: false,
               maxlength: Budget::Investment.description_max_length,
+              class: "html-area" %>
+      </div>
+
+      <div class="small-12 column">
+        <%= translations_form.label :summary %>
+        <p class="help-text"><%= t("budgets.investments.form.summary_help") %></p>
+
+        <%= translations_form.text_area :summary, label: false,
+              maxlength: Budget::Investment.summary_max_length,
               class: "html-area" %>
       </div>
     <% end %>
@@ -34,12 +74,6 @@
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
         <%= render "images/nested_image", imageable: @investment, f: f %>
-      </div>
-    <% end %>
-
-    <% if feature?(:allow_attached_documents) %>
-      <div class="documents small-12 column">
-        <%= render "documents/nested_documents", documentable: @investment, f: f %>
       </div>
     <% end %>
 
@@ -57,14 +91,6 @@
 
       </div>
     <% end %>
-
-    <div class="small-12 column">
-      <%= f.text_field :location %>
-    </div>
-
-    <div class="small-12 column">
-      <%= f.text_field :organization_name %>
-    </div>
 
     <div class="small-12 column">
       <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
@@ -86,9 +112,43 @@
                         data: { js_url: suggest_tags_path } %>
     </div>
 
+    <div class="small-12 column">
+      <span><strong><%= t("budgets.investments.form.organization_title") %></strong></span>
+      <%= f.check_box :organization_checkbox,
+                      label: t("budgets.investments.form.organization_checkbox"),
+                      data: { toggle: "organization_input" } %>
+
+      <div id="organization_input" class="small-12 <%= class_for_text_field(@investment.organization_checkbox) %>" data-toggler="hide">
+        <%= f.text_area :organization, maxlength: 500, rows: 3 %>
+      </div>
+    </div>
+
+    <div class="small-12 column margin-top">
+      <span><strong><%= t("budgets.investments.form.cooperation") %><strong></span>
+      <p class="help-text"><%= t("budgets.investments.form.cooperation_help") %></p>
+
+      <%= f.check_box :share_online_checkbox,
+                      label: t("budgets.investments.form.share_online_checkbox"),
+                      data: { toggle: "share_online_input" } %>
+
+      <div id="share_online_input" class="small-12 <%= class_for_text_field(@investment.share_online_checkbox) %>" data-toggler="hide">
+        <%= f.text_area :share_online, maxlength: 200, rows: 3 %>
+      </div>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.check_box :share_offline_checkbox,
+                      label: t("budgets.investments.form.share_offline_checkbox"),
+                      data: { toggle: "share_offline_input" } %>
+
+      <div id="share_offline_input" class="small-12 <%= class_for_text_field(@investment.share_offline_checkbox) %>" data-toggler="hide">
+        <%= f.text_area :share_offline, maxlength: 200, rows: 3 %>
+      </div>
+    </div>
+
     <% unless current_user.manager? %>
 
-      <div class="small-12 column">
+      <div class="small-12 column margin-top">
         <%= f.check_box :terms_of_service,
           title: t("form.accept_terms_title"),
           label: t("form.accept_terms",
@@ -100,7 +160,7 @@
     <% end %>
 
     <div class="actions small-12 medium-6 large-4 end column">
-      <%= f.submit(nil, class: "button expanded") %>
+      <%= f.submit(nil, class: "button") %>
     </div>
   </div>
 <% end %>

@@ -312,9 +312,6 @@ describe "Valuation budget investments" do
         click_link "Edit dossier"
       end
 
-      fill_in "budget_investment_price", with: "12345"
-      fill_in "budget_investment_price_first_year", with: "9876"
-      fill_in "budget_investment_price_explanation", with: "Very cheap idea"
       choose  "budget_investment_feasibility_feasible"
       fill_in "budget_investment_duration", with: "19 months"
       click_button "Save changes"
@@ -324,9 +321,6 @@ describe "Valuation budget investments" do
       visit valuation_budget_budget_investments_path(budget)
       click_link investment.title
 
-      within("#price") { expect(page).to have_content("12345") }
-      within("#price_first_year") { expect(page).to have_content("9876") }
-      expect(page).to have_content("Very cheap idea")
       within("#duration") { expect(page).to have_content("19 months") }
       within("#feasibility") { expect(page).to have_content("Feasible") }
       expect(page).not_to have_content("Valuation finished")
@@ -353,8 +347,7 @@ describe "Valuation budget investments" do
     end
 
     scenario "Feasibility selection makes proper fields visible", :js do
-      feasible_fields = ["Price (€)", "Cost during the first year (€)", "Price explanation",
-                         "Time scope"]
+      feasible_fields = ["Time scope"]
       unfeasible_fields = ["Feasibility explanation"]
       any_feasibility_fields = ["Valuation finished"]
       undecided_fields = feasible_fields + unfeasible_fields + any_feasibility_fields
@@ -466,7 +459,7 @@ describe "Valuation budget investments" do
       end
     end
 
-    scenario "Validates price formats" do
+    xscenario "Validates price formats" do
       investment.update!(visible_to_valuators: true)
 
       visit valuation_budget_budget_investments_path(budget)

@@ -16,13 +16,20 @@
 
 <br>
 
-<%= render_image(investment.image, :large, true) if investment.image.present? %>
+<%= render_image(investment.image, :large, false) if investment.image.present? %>
+<div class="clear margin-bottom"></div>
+<hr>
 
-<p id="investment_code">
-  <%= sanitize(t("budgets.investments.show.code", code: investment.id)) %>
-</p>
+<strong><%= t("budgets.investments.show.petition") %></strong>
+<p><%= investment.petition %></p>
 
+<strong><%= t("budgets.investments.show.description") %></strong>
 <%= auto_link_already_sanitized_html wysiwyg(investment.description) %>
+
+<% if investment.summary.present? %>
+  <strong><%= t("budgets.investments.show.summary") %></strong>
+  <%= auto_link_already_sanitized_html wysiwyg(investment.summary) %>
+<% end %>
 
 <% if feature?(:map) && map_location_available?(@investment.map_location) %>
   <div class="margin">
@@ -42,18 +49,29 @@
   </p>
 <% end %>
 
-<% if feature?(:allow_attached_documents) %>
-  <%= render "documents/documents",
-              documents: investment.documents,
-              max_documents_allowed: Budget::Investment.max_documents_allowed %>
-<% end %>
-
-<%= render "shared/tags", taggable: investment %>
+<div class="margin-bottom">
+  <%= render "shared/tags", taggable: investment %>
+</div>
 
 <% if investment.external_url.present? %>
   <div class="document-link">
     <%= sanitize_and_auto_link investment.external_url %>
   </div>
+<% end %>
+
+<% if investment.organization.present? %>
+  <strong><%= t("budgets.investments.show.organization") %></strong>
+  <p><%= investment.organization %></p>
+<% end %>
+
+<% if investment.share_online.present? %>
+  <strong><%= t("budgets.investments.show.share_online") %></strong>
+  <p><%= investment.share_online %></p>
+<% end %>
+
+<% if investment.share_offline.present? %>
+  <strong><%= t("budgets.investments.show.share_offline") %></strong>
+  <p><%= investment.share_offline %></p>
 <% end %>
 
 <% if investment.should_show_unfeasibility_explanation? %>
@@ -69,8 +87,6 @@
 <% end %>
 
 <% if local_assigns[:preview].nil? %>
-  <%= render "relationable/related_content", relationable: investment %>
-
   <div class="js-moderator-investment-actions margin">
     <%= render "budgets/investments/actions", investment: investment %>
   </div>

@@ -41,14 +41,18 @@ describe "Public area translatable records" do
       visit new_budget_investment_path(budget)
 
       fill_in "Title", with: "My awesome project"
+      fill_in_ckeditor "Summary", with: "Everything is awesome"
       fill_in_ckeditor "Description", with: "Everything is awesome!"
 
       select "Français", from: :add_language
       fill_in "Title", with: "Titre en Français"
+      fill_in_ckeditor "Summary", with: "Contenu en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
       select "Everywhere", from: "budget_investment_heading_id"
       check "budget_investment_terms_of_service"
+      check "budget_investment_recipient_petition"
+      check "budget_investment_requirements_petition"
       click_button "Create Investment"
 
       expect(page).to have_content "Budget Investment created successfully"
@@ -74,10 +78,13 @@ describe "Public area translatable records" do
       click_link "Remove language"
       select "Português brasileiro", from: :add_language
       fill_in "Title", with: "Titre en Français"
+      fill_in_ckeditor "Summary", with: "Contenu en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
       select "Everywhere", from: "budget_investment_heading_id"
       check "budget_investment_terms_of_service"
+      check "budget_investment_recipient_petition"
+      check "budget_investment_requirements_petition"
       click_button "Create Investment"
 
       expect(page).to have_content "Budget Investment created successfully"
@@ -101,6 +108,8 @@ describe "Public area translatable records" do
 
       select "Everywhere", from: "budget_investment_heading_id"
       check "budget_investment_terms_of_service"
+      check "budget_investment_recipient_petition"
+      check "budget_investment_requirements_petition"
       click_button "Create Investment"
 
       expect(page).to have_css "#error_explanation"

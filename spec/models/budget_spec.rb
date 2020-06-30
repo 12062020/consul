@@ -213,23 +213,23 @@ describe Budget do
   describe "investments_orders" do
     it "is random when accepting and reviewing" do
       budget.phase = "accepting"
-      expect(budget.investments_orders).to eq(["random"])
+      expect(budget.investments_orders).to eq(["random", "newest", "oldest"])
       budget.phase = "reviewing"
-      expect(budget.investments_orders).to eq(["random"])
+      expect(budget.investments_orders).to eq(["random", "newest", "oldest"])
     end
     it "is random and price when ballotting and reviewing ballots" do
       budget.phase = "publishing_prices"
-      expect(budget.investments_orders).to eq(["random", "price"])
+      expect(budget.investments_orders).to eq(["random", "price", "newest", "oldest"])
       budget.phase = "balloting"
-      expect(budget.investments_orders).to eq(["random", "price"])
+      expect(budget.investments_orders).to eq(["random", "price", "newest", "oldest"])
       budget.phase = "reviewing_ballots"
-      expect(budget.investments_orders).to eq(["random", "price"])
+      expect(budget.investments_orders).to eq(["random", "price", "newest", "oldest"])
     end
     it "is random and confidence_score in all other cases" do
       budget.phase = "selecting"
-      expect(budget.investments_orders).to eq(["random", "confidence_score"])
+      expect(budget.investments_orders).to eq(["random", "confidence_score", "newest", "oldest"])
       budget.phase = "valuating"
-      expect(budget.investments_orders).to eq(["random", "confidence_score"])
+      expect(budget.investments_orders).to eq(["random", "confidence_score", "newest", "oldest"])
     end
   end
 

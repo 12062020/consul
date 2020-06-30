@@ -1,5 +1,445 @@
-// Overrides and adds customized styles in this file
-// Read more on documentation:
-// * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
-// * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
+// Custom styles
 //
+// 0. Variables
+// 1. General
+// 2. Homepage and custom pages
+// 3. Budgets
+// 4. Active page
+// 5. Devise views
+// 6. Polls
+//
+
+// 0. Variables
+// ------------------------------------
+
+$custom-brown:         #f9d2b0;
+$custom-brown-soft:    #f3ebe7;
+$custom-brown-light:   #e6dad1;
+$custom-yellow:        #f9c82b;
+$custom-blue:          #8dd0f1;
+$custom-orange:        #f2910f;
+
+// 1. General
+// ------------------------------------
+
+.top-links {
+  display: none;
+}
+
+header,
+.top-bar {
+  background: #fff !important;
+}
+
+.top-bar {
+
+  .menu > li a {
+    color: #000;
+  }
+
+  .dropdown.menu {
+
+    > li.is-active > a {
+      color: #000;
+    }
+
+    > li.is-dropdown-submenu-parent > a::after {
+      border-color: #000 transparent transparent;
+    }
+  }
+}
+
+.subnavigation {
+  background: $custom-brown-soft;
+
+  a {
+    color: #000;
+
+    &:hover,
+    &.is-active {
+      color: #000;
+    }
+
+    &.is-active {
+      border-bottom: 2px solid #000;
+    }
+  }
+}
+
+.subnavigation-top-link {
+  float: right;
+  font-size: $small-font-size;
+  font-weight: normal !important;
+  text-decoration: underline;
+}
+
+.footer {
+  background: $custom-brown-soft;
+}
+
+.menu-icon.dark:hover::after,
+.menu-icon.dark::after {
+  background: #000;
+  box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+}
+
+// 2. Homepage and custom pages
+// ------------------------------------
+
+.home-page {
+
+  .jumbo {
+    background: $custom-brown;
+    padding: $line-height * 2 0;
+
+    .button {
+      background: $custom-yellow;
+      color: #000;
+      font-weight: bold;
+    }
+  }
+
+  .card {
+    min-height: 280px;
+  }
+
+  .background-header {
+    display: none;
+  }
+
+
+  h3 {
+
+    &.title {
+      border: 0;
+      font-size: rem-calc(36);
+    }
+  }
+}
+
+.home-page .figure-card .gradient,
+.custom-page .figure-card .gradient {
+  display: none;
+}
+
+.home-page .card a:hover:not(.see-all),
+.custom-page .card a:hover:not(.see-all) {
+  box-shadow: none;
+}
+
+.home-page .card a:hover img,
+.custom-page .card a:hover img {
+  filter: brightness(60%);
+  transform: none;
+}
+
+.custom-page .custom-page-ablauf {
+
+  .pages-cards {
+    border-left: 12px solid $custom-blue;
+    display: inline-block;
+    margin: rem-calc(80) 0 rem-calc(80) rem-calc(16);
+    position: relative;
+
+    &::before,
+    &::after {
+      color: $custom-blue;
+      content: "...";
+      font-size: rem-calc(100);
+      left: -20px;
+      position: absolute;
+      transform: rotate(90deg);
+    }
+
+    &::before {
+      top: -120px;
+    }
+
+    &::after {
+      bottom: -120px;
+    }
+  }
+
+  .card {
+    border: 40px solid #fff;
+    padding: rem-calc(40) rem-calc(20);
+    position: relative;
+
+    &::before {
+      background: $custom-brown-light;
+      border-radius: rem-calc(30);
+      content: "";
+      height: rem-calc(30);
+      left: -60px;
+      position: absolute;
+      top: 60px;
+      width: rem-calc(30);
+    }
+
+    h3 {
+      font-size: rem-calc(30);
+    }
+
+    .button {
+      background: $custom-yellow;
+      color: #000;
+      font-weight: bold;
+    }
+
+    &.active-phase-card {
+      background: $custom-brown-soft;
+      border: 40px solid $custom-brown;
+      padding: rem-calc(40) rem-calc(20);
+
+      &::before {
+        background: $custom-yellow;
+      }
+    }
+  }
+}
+
+.row.iframe {
+  max-width: rem-calc(1280);
+}
+
+// 3. Budgets
+// ------------------------------------
+
+.jumbo-budget {
+  border: 0;
+  position: relative;
+  overflow: hidden;
+
+  &.header-andere {
+    background-color: $custom-orange;
+  }
+
+  &.header-demokratie {
+    background-color: $custom-blue;
+  }
+
+  &.header-klima-und-biodiversitat {
+    background-color: #bfcd47;
+  }
+
+  &.header-soziale-gerechtigkeit {
+    background-color: #dfb0c7;
+  }
+
+  &.header-zeit-nach-corona {
+    background-color: #f9d2b1;
+  }
+
+  @include breakpoint(medium) {
+
+    .tagline {
+      position: absolute;
+      z-index: 1;
+    }
+
+    &.header-andere .tagline {
+      background-color: $custom-orange;
+    }
+
+    &.header-demokratie .tagline {
+      background-color: $custom-blue;
+    }
+
+    &.header-klima-und-biodiversitat .tagline {
+      background-color: #bfcd47;
+    }
+
+    &.header-soziale-gerechtigkeit .tagline {
+      background-color: #dfb0c7;
+    }
+  }
+
+  .image-banner {
+    text-align: right;
+
+    img {
+      max-height: rem-calc(140);
+    }
+  }
+
+  @include breakpoint(large) {
+
+    .image-banner {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      img {
+        max-height: none;
+      }
+    }
+  }
+
+  h2,
+  h3,
+  .back,
+  .icon-angle-left,
+  p,
+  a {
+    color: $text;
+  }
+}
+
+.budget-investment-new {
+
+  .checkbox {
+    font-size: $small-font-size;
+  }
+
+  .help-text {
+
+    a {
+      color: $custom-blue;
+    }
+  }
+
+  .button.hollow {
+    background: $custom-brown-light;
+    border-color: $custom-brown-light;
+    color: $text;
+  }
+
+  .actions {
+
+    .button {
+      background: $custom-yellow;
+      color: #000;
+      font-weight: bold;
+    }
+  }
+
+  .recommendations {
+
+    li {
+      font-weight: normal;
+    }
+  }
+}
+
+.budget-investment .investment-project-description {
+  font-size: $base-font-size;
+}
+
+.button {
+
+  &.expanded {
+
+    &.budget {
+      background: $custom-yellow;
+      color: #000;
+      font-weight: bold;
+    }
+  }
+}
+
+// 4. Active page
+// ------------------------------------
+
+.homepage-active a.page-0,
+.ablauf-active a.page-1,
+.infos-active a.page-2,
+.expertinnen-active a.page-3,
+span[class*="-infos"] a.page-4,
+.netiquette-active a.page-5,
+.hilfe-active a.page-6 {
+  border-bottom: 2px solid #000;
+}
+
+// 5. Devise views
+// ------------------------------------
+
+.auth-image {
+  background: $custom-brown;
+
+  @include breakpoint(medium) {
+    min-height: rem-calc(1300);
+  }
+}
+
+.auth-form {
+
+  .button {
+    background: $custom-yellow;
+    color: #000;
+    font-weight: bold;
+
+    &.button-twitter {
+      background: #ecf7fc;
+    }
+
+    &.button-google {
+      background: #fcedea;
+    }
+
+    &.button-facebook {
+      background: #ebeef4;
+    }
+  }
+
+  .signup-terms {
+    font-size: $small-font-size;
+    font-weight: normal;
+  }
+
+  .signup-terms,
+  .checkbox {
+    padding-bottom: $line-height / 2;
+    vertical-align: top;
+    width: 90%;
+  }
+}
+
+.account {
+
+  .checkbox {
+    font-size: $small-font-size;
+  }
+}
+
+// 6. Polls
+// ------------------------------------
+
+.poll-question-answers .button {
+  background: #e6dad1;
+  border: 0 !important;
+  color: #000 !important;
+
+  &:hover {
+    background: #e6dad1;
+  }
+
+  @include breakpoint(medium) {
+    display: table;
+    text-align: left;
+  }
+
+  @include breakpoint(large) {
+    min-width: 630px;
+  }
+
+  &.answered {
+    background: #fbc11d;
+
+    &::after {
+      background-color: transparent;
+      background-image: image-url("answer_selected.png");
+      content: "";
+      height: rem-calc(36);
+      right: -12px;
+      top: -12px;
+      width: rem-calc(36);
+    }
+  }
+}
+
+.poll-question {
+
+  @include breakpoint(medium) {
+    max-width: 700px;
+  }
+}

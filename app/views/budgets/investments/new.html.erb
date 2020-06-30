@@ -1,7 +1,20 @@
 <div class="budget-investment-new row">
   <div class="small-12 medium-9 column">
     <h1><%= t("management.budget_investments.create") %></h1>
+    <p><%= t("management.budget_investments.subtitle") %></p>
 
     <%= render "/budgets/investments/form", form_url: budget_investments_path(@budget) %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <h2>Kriterien der Expert*innen</h2>
+    <p class="small">Bitte beachte die folgenden Kriterien</p>
+
+      <ul class="recommendations">
+        <li><strong>Wirksamkeit</strong>: Entweder langfristige Wirkung auf den politischen Diskurs oder eine kurzfristige Umsetzung der Lösung ist wahrscheinlich und hätte viel Wirkung</li>
+        <li><strong>Kommunizierbarkeit</strong>: Der Wirkungsmechanismus der Lösung kann klar kommuniziert werden</li>
+        <li><strong>Wissenschaftlichkeit</strong>: Inhalte bzw. Argumente sind wissenschaftlich fundiert und nicht dogmatisch</li>
+        <li><strong>Keine Nebenwirkung</strong>: Es bestehen keine signifikanten negativen Nebenwirkungen auf eines der <a href="https://17ziele.de/" target="_blank">17 Ziele für nachhaltige Entwicklung der UN</a></li>
+      </ul>
   </div>
 </div>

@@ -1,0 +1,24 @@
+de:
+  devise_views:
+    users:
+      registrations:
+        new:
+          username_label: "Nutzer*innenname"
+          username_note: "Name, der öffentlich neben deinen Beiträgen angezeigt wird. Bitte wähle einen Nutzer*innennamen, in dem dein vollständiger Klarname zu erkennen ist (freiwillig)."
+          terms: "Mit der Registrierung akzeptiere ich die %{terms} und die %{privacy}"
+          terms_title: "Mit der Registrierung akzeptiere ich die Allgemeinen Nutzungsbedingungen und die Datenschutzbestimmungen"
+          terms_link: "Allgemeinen Nutzungsbedingungen"
+          privacy_link: "Datenschutzbestimmungen"
+          area: "Ich habe Lust mich online mit anderen Nutzer*innen zu vernetzen und an weiteren Online-Angeboten teilzunehmen."
+          marketing_olympia: "Ja, ich will Informationen!<br>Und deswegen möchte ich über den Ablauf des Projekts 12062020 und weitere Aktivitäten vom 12062020 Olympia-Team sowie von Mehr Demokratie e.V. informiert werden."
+          marketing_olympia_title: "Ja, ich will Informationen! Und deswegen möchte ich über den Ablauf des Projekts 12062020 und weitere Aktivitäten vom 12062020 Olympia-Team sowie von Mehr Demokratie e.V. informiert werden."
+          marketing: "Ich möchte wenig Informationen!<br>Ich möchte nur über den Ablauf des Projekts 12062020 vom 12062020 Olympia-Team informiert werden."
+          marketing_title: "Ich möchte wenig Informationen! Ich möchte nur über den Ablauf des Projekts 12062020 vom 12062020 Olympia-Team informiert werden."
+        success:
+          back_to_index: "Verstanden - zurück zur Startseite"
+          thank_you: "Danke für die Registrierung. Nun musst du nur noch deine E-Mail-Adresse bestätigen."
+          instructions_1: "Bitte <b>überprüfe deinen E-Mail-Eingang</b> - wir haben dir einen Link zur Bestätigung deines Kontos geschickt."
+          instructions_2: "Nach der Bestätigung kannst du direkt loslegen."
+    shared:
+      links:
+        new_confirmation: "Hast du keine Anweisungen zur Aktivierung deines Kontos erhalten?"

@@ -18,6 +18,8 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
   def create
     @investment.terms_of_service = "1"
+    @investment.recipient_petition = "1"
+    @investment.requirements_petition = "1"
     @investment.author = managed_user
 
     if @investment.save

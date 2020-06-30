@@ -1,0 +1,12 @@
+<div class="small-12 medium-9 column">
+  <% if card.label.present? %>
+    <span class="small"><%= card.label %></span>
+  <% end %>
+
+  <h3><%= card.title %></h3>
+  <p class="description"><%= card.description %></p>
+
+  <% if card.link_url.present? %>
+    <%= link_to card.link_text, card.link_url, class: "button" %>
+  <% end %>
+</div>

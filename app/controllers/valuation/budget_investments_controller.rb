@@ -98,7 +98,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def valuation_params
-      params.require(:budget_investment).permit(:price, :price_first_year, :price_explanation,
+      params.require(:budget_investment).permit(:price, :price_first_year, :price_explanation, :terms_of_service,
                                                 :feasibility, :unfeasibility_explanation,
                                                 :duration, :valuation_finished)
     end

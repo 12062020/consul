@@ -118,7 +118,7 @@ describe RemoteTranslations::Caller do
       let(:caller) { RemoteTranslations::Caller.new(remote_translation) }
 
       it "returns the resource with new translation persisted" do
-        response = ["Título traducido", "Descripción traducida"]
+        response = ["Título traducido", "Resumen traducido", "Descripción traducida"]
         expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
@@ -127,7 +127,7 @@ describe RemoteTranslations::Caller do
       end
 
       it "when new translation locale is distinct to default_locale skip lenght validations" do
-        response = ["TT", "Descripción traducida"]
+        response = ["TT", "Resumen traducido", "Descripción traducida"]
         expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
@@ -138,7 +138,7 @@ describe RemoteTranslations::Caller do
       end
 
       it "when new translation locale is distinct to default_locale not skip presence validations" do
-        response = ["", "Descripción traducida"]
+        response = ["", "Resumen traducido", "Descripción traducida"]
         expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
@@ -149,7 +149,7 @@ describe RemoteTranslations::Caller do
       end
 
       it "destroy remote translation instance" do
-        response = ["Título traducido", "Descripción traducida"]
+        response = ["Título traducido", "Resumen traducido", "Descripción traducida"]
         expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call

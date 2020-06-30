@@ -1,8 +1,6 @@
 <div class="row account">
   <div class="small-12 column">
     <div class="float-right text-right">
-      <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button hollow" %>
-      <br>
       <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "delete" %>
     </div>
 
@@ -94,16 +92,8 @@
           <p><%= t("account.show.user_permission_info") %></p>
 
           <ul>
-            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
             <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
-            <li>
-              <% if current_user.level_two_or_three_verified? %>
-                <span class="icon-check"></span>
-              <% else %>
-                <span class="icon-x"></span>
-              <% end %>
-              <%= t("account.show.user_permission_support_proposal") %>
-            </li>
+            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
             <li>
               <% if current_user.level_three_verified? %>
                 <span class="icon-check"></span>
@@ -114,9 +104,6 @@
             </li>
           </ul>
 
-          <p>
-            <span><%= t("account.show.user_permission_verify_info") %></span>
-          </p>
           <p>
             <%= t("account.show.user_permission_verify") %>
           </p>

@@ -93,11 +93,14 @@ FactoryBot.define do
     heading { budget&.headings&.reload&.sample || association(:budget_heading, budget: budget) }
 
     association :author, factory: :user
+    summary              { "Summary of what I want" }
     description          { "Spend money on this" }
     price                { 10 }
     unfeasibility_explanation { "" }
     skip_map             { "1" }
     terms_of_service     { "1" }
+    recipient_petition   { "1" }
+    requirements_petition { "1" }
     incompatible         { false }
 
     trait :with_confidence_score do

@@ -123,7 +123,9 @@ section "Creating Investments" do
 
     translation_attributes = random_locales.each_with_object({}) do |locale, attributes|
       attributes["title_#{locale.to_s.underscore}"] = "Title for locale #{locale}"
+      attributes["summary_#{locale.to_s.underscore}"] = "<p>Summary for locale #{locale}</p>"
       attributes["description_#{locale.to_s.underscore}"] = "<p>Description for locale #{locale}</p>"
+      attributes["petition_#{locale.to_s.underscore}"] = "<p>Petition for locale #{locale}</p>"
     end
 
     investment = Budget::Investment.create!({
@@ -138,7 +140,9 @@ section "Creating Investments" do
       tag_list: tags.sample(3).join(","),
       price: rand(1..100) * 100000,
       skip_map: "1",
-      terms_of_service: "1"
+      terms_of_service: "1",
+      recipient_petition: "1",
+      requirements_petition: "1"
     }.merge(translation_attributes))
 
     add_image_to(investment) if Random.rand > 0.5
@@ -178,20 +182,24 @@ section "Winner Investments" do
       group: heading.group,
       budget: heading.group.budget,
       title: Faker::Lorem.sentence(3).truncate(60),
+      summary: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
       description: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
+      petition: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>".truncate(450),
       created_at: rand((Time.current - 1.week)..Time.current),
       feasibility: "feasible",
       valuation_finished: true,
       selected: true,
       price: rand(10000..heading.price),
       skip_map: "1",
-      terms_of_service: "1"
+      terms_of_service: "1",
+      recipient_petition: "1",
+      requirements_petition: "1"
     )
     add_image_to(investment) if Random.rand > 0.3
   end
-  budget.headings.each do |heading|
-    Budget::Result.new(budget, heading).calculate_winners
-  end
+  #budget.headings.each do |heading|
+  #  Budget::Result.new(budget, heading).calculate_winners
+  #end
 end
 
 section "Creating Valuation Assignments" do

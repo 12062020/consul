@@ -146,6 +146,7 @@ de:
       budget/investment:
         heading_id: "Rubrik"
         title: "Titel"
+        summary: "Zusammenfassung"
         description: "Beschreibung"
         external_url: "Link zur weiteren Dokumentation"
         administrator_id: "Administrator*in"
@@ -169,6 +170,7 @@ de:
         valuation_tag_list: "Tags"
       budget/investment/translation:
         title: "Titel"
+        summary: "Zusammenfassung"
         description: "Beschreibung"
       geozone:
         name: Name
@@ -248,7 +250,7 @@ de:
         current_password: "Aktuelles Passwort"
         email_digest: "Benachrichtigungen mit Zusammenfassung über Vorschlag erhalten"
         email_on_comment: "Benachrichtigen Sie mich per E-Mail, wenn jemand meine Vorschläge oder Diskussionen kommentiert"
-        email_on_comment_reply: "Benachrichtigen Sie mich per E-Mail, wenn jemand auf meine Kommentare antwortet"
+        email_on_comment_reply: "Per E-Mail benachrichtigt werden, wenn jemand auf meine Kommentare antwortet"
         email_on_direct_message: "E-Mails über direkte Nachrichten empfangen"
         newsletter: "Per E-Mail Webseite relevante Informationen erhalten"
         official_position: "Beamte/in"

@@ -26,7 +26,9 @@ class Budget
     include Randomizable
 
     translates :title, touch: true
+    translates :summary, touch: true
     translates :description, touch: true
+    translates :petition, touch: true
     include Globalizable
 
     audited on: [:update, :destroy]
@@ -55,13 +57,19 @@ class Budget
       class_name: "Comment"
 
     validates_translation :title, presence: true, length: { in: 4..Budget::Investment.title_max_length }
+    validates_translation :summary, length: { maximum: Budget::Investment.summary_max_length }
     validates_translation :description, presence: true, length: { maximum: Budget::Investment.description_max_length }
+    validates_translation :petition, presence: true, length: { maximum: 500 }
 
     validates :author, presence: true
     validates :heading_id, presence: true
     validates :unfeasibility_explanation, presence: { if: :unfeasibility_explanation_required? }
-    validates :price, presence: { if: :price_required? }
-    validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
+    validates :terms_of_service, acceptance: { allow_nil: false }
+    validates :recipient_petition, acceptance: { allow_nil: false }
+    validates :requirements_petition, acceptance: { allow_nil: false }
+    validates :organization, presence: { if: :organization_checkbox? }, length: { maximum: 500 }
+    validates :share_online, presence: { if: :share_online_checkbox? }, length: { maximum: 200 }
+    validates :share_offline, presence: { if: :share_offline_checkbox? }, length: { maximum: 200 }
 
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
@@ -93,6 +101,8 @@ class Budget
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago) }
     scope :sort_by_flags,               -> { order(flags_count: :desc, updated_at: :desc) }
     scope :sort_by_created_at,          -> { reorder(created_at: :desc) }
+    scope :sort_by_newest,              -> { order(created_at: :desc) }
+    scope :sort_by_oldest,              -> { order(created_at: :asc) }
 
     scope :by_budget,         ->(budget)      { where(budget: budget) }
     scope :by_group,          ->(group_id)    { where(group_id: group_id) }
@@ -233,10 +243,6 @@ class Budget
 
     def unfeasibility_explanation_required?
       unfeasible? && valuation_finished?
-    end
-
-    def price_required?
-      feasible? && valuation_finished?
     end
 
     def unfeasible_email_pending?

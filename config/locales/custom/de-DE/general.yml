@@ -1,0 +1,44 @@
+de:
+  form:
+    accept_terms: "Ich stimme der %{policy} und den %{conditions} zu. *"
+    not_saved: "verhinderte das Speichern dieses %{resource}. <br>Bitte überprüfe die gekennzeichneten Felder, um herauszufinden wie diese korrigiert werden können."
+    user: "Kontos"
+    budget/investment: "Petitionsvorschlag"
+  comments:
+    form:
+      leave_comment: "Schreibe einen Kommentar zu diesem Vorschlag"
+      leave_comment_help: "Bitte überprüfe, bevor Du den Kommentar veröffentlichst, dass er sich nur auf diesen Petitionsvorschlag bezieht. Siehe dazu auch die %{link}."
+      leave_comment_link: "Netiquette"
+  shared:
+    following: "Du folgst diesem Petitionsvorschlag"
+    follow_entity: "Diesem Petitionsvorschlag folgen"
+    unfollow_entity: "Diesem Petitionsvorschlag nicht mehr folgen"
+    followable:
+      budget_investment:
+        create:
+          notice: "Du folgst nun diesem Petitionsvorschlag! Wir werden dich bei Änderungen benachrichtigen, sodass du immer auf dem Laufenden bleibst."
+        destroy:
+          notice: "Du hast aufgehört diesem Petitionsvorschlag zu folgen! Du wirst nicht länger Benachrichtigungen zu diesem Vorschlag erhalten."
+  welcome:
+    cards:
+      title: "Vorschläge nach Themenbereiche"
+      subtitle: "Informiere dich über eingegangene Vorschläge, diskutiere mit und vernetze dich"
+  users:
+    show:
+      budget_investments: "Vorschläge"
+      filters:
+        budget_investments:
+          one: "1 Petitionsvorschläge"
+          other: "%{count} Petitionsvorschläge"
+  account:
+    show:
+      user_permission_info: "Du kannst..."
+      user_permission_proposal: "Neue Vorschläge erstellen"
+      user_permission_votes: "An der Abstimmung teilnehmen"
+      user_permission_verify: "Damit du alle Funktionen nutzen kannst, musst du dein Konto verifizieren."
+  votes:
+    budget_investments:
+      maximum_votes_per_heading_reached: "Du hast bereits die maximale Anzahl an Petitionsvorschlägen unterstützt."
+  polls:
+    show:
+      back: "Zurück zur Projektübersicht"

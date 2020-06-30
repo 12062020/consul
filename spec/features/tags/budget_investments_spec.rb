@@ -68,8 +68,11 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
+    fill_in "Summary", with: "I want to live in a high tower over the clouds"
     fill_in "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
+    check   "budget_investment_recipient_petition"
+    check   "budget_investment_requirements_petition"
 
     fill_in "budget_investment_tag_list", with: "#{tag_medio_ambiente.name}, #{tag_economia.name}"
 
@@ -87,8 +90,11 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
+    fill_in_ckeditor "Summary", with: "If I had a gym near my place I could go do Zumba"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
+    check "budget_investment_recipient_petition"
+    check "budget_investment_requirements_petition"
 
     find(".js-add-tag-link", text: tag_economia.name).click
     click_button "Create Investment"
@@ -111,8 +117,11 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
+    fill_in_ckeditor "Summary", with: "If I had a gym near my place I could go do Zumba"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
+    check "budget_investment_recipient_petition"
+    check "budget_investment_requirements_petition"
 
     find(".js-add-tag-link", text: "Education").click
     click_button "Create Investment"
@@ -135,8 +144,11 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
+    fill_in_ckeditor "Summary", with: "If I had a gym near my place I could go do Zumba"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
+    check "budget_investment_recipient_petition"
+    check "budget_investment_requirements_petition"
 
     find(".js-add-tag-link", text: "Education").click
     click_button "Create Investment"
@@ -156,8 +168,11 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
+    fill_in "Summary", with: "I want to live in a high tower over the clouds"
     fill_in "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
+    check   "budget_investment_recipient_petition"
+    check   "budget_investment_requirements_petition"
 
     fill_in "budget_investment_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 
@@ -174,8 +189,11 @@ describe "Tags" do
 
     select  heading.name, from: "budget_investment_heading_id"
     fill_in "Title", with: "Build a skyscraper"
+    fill_in "Summary", with: "I want to live in a high tower over the clouds"
     fill_in "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
+    check   "budget_investment_recipient_petition"
+    check   "budget_investment_requirements_petition"
 
     fill_in "budget_investment_tag_list", with: "user_id=1, &a=3, <script>alert('hey');</script>"
 

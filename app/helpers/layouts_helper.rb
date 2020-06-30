@@ -7,4 +7,8 @@ module LayoutsHelper
       link_to(text, path, options)
     end
   end
+
+  def homepage_or_budgets?
+    %w[budgets investments].include?(controller_name) || current_page?(root_path)
+  end
 end

@@ -76,9 +76,12 @@ class User < ApplicationRecord
   has_many :topics, foreign_key: :author_id, inverse_of: :author
   belongs_to :geozone
 
+  validates :email, presence: true
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: { scope: :registering_with_oauth }, if: :username_required?
   validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
+  validates :first_name, presence: true, length: { maximum: 60 }
+  validates :last_name, presence: true, length: { maximum: 60 }
 
   validate :validate_username_length
 
@@ -255,7 +258,7 @@ class User < ApplicationRecord
       erased_at: Time.current,
       erase_reason: erase_reason,
       username: nil,
-      email: nil,
+      email: "erased@mail.com",
       unconfirmed_email: nil,
       phone_number: nil,
       encrypted_password: "",
@@ -263,7 +266,9 @@ class User < ApplicationRecord
       reset_password_token: nil,
       email_verification_token: nil,
       confirmed_phone: nil,
-      unconfirmed_phone: nil
+      unconfirmed_phone: nil,
+      first_name: "Erased First name",
+      last_name: "Erased Last name"
     )
     identities.destroy_all
   end

@@ -1,0 +1,33 @@
+de:
+  activerecord:
+    models:
+      budget/investment:
+        one: "Petitionsvorschläge"
+        other: "Petitionsvorschläge"
+    attributes:
+      budget/investment:
+        heading_id: "Themenbereich *"
+        organization: "Welche?"
+        share_online: "Wie können sie dich am besten erreichen? (E-Mail-Adresse, Private Nachricht auf dieser Plattform, etc.)"
+        share_offline: "An welchen Orten wäre dies für Dich möglich?"
+      budget/investment/translation:
+        title: "Titel *"
+        summary: "Weiterführende Informationen"
+        description: "Begründung *"
+        problem: "Adressiertes Problem *"
+        petition: "Wortlaut der Petition *"
+        capacities: "Kapazitäten (Antwort nicht öffentlich) *"
+        cooperation: "Unterstützung und Kooperation"
+      user:
+        first_name: "Vorname *"
+        last_name: "Nachname *"
+        plz: "PLZ"
+        ort: "Ort"
+        username: "Nutzer*innenname *"
+        email: "E-Mail *"
+        password: "Passwort *"
+        public_interests: "Die Petitionsvorschläge, denen ich folge, auf meinem Profil anzeigen"
+        email_on_comment: "Per E-Mail benachrichtigt werden, wenn jemand meine Vorschläge oder Diskussionen kommentiert"
+        newsletter: "Per E-Mail weitere relevante Informationen erhalten"
+        email_digest: "Benachrichtigungen mit Zusammenfassungen von Vorschlägen erhalten"
+        email_on_direct_message: "Direkte Nachrichten anderer Nutzer*innen erlauben. Diese werden per E-Mail an Dich geschickt."

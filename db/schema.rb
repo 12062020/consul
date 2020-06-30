@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191108173350) do
+ActiveRecord::Schema.define(version: 20200312225838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -227,6 +227,8 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.string   "title"
     t.text     "description"
     t.datetime "hidden_at"
+    t.text     "summary"
+    t.text     "petition"
     t.index ["budget_investment_id"], name: "index_budget_investment_translations_on_budget_investment_id", using: :btree
     t.index ["hidden_at"], name: "index_budget_investment_translations_on_hidden_at", using: :btree
     t.index ["locale"], name: "index_budget_investment_translations_on_locale", using: :btree
@@ -273,6 +275,14 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.datetime "ignored_flag_at"
     t.integer  "flags_count",                                 default: 0
     t.integer  "original_heading_id"
+    t.boolean  "recipient_petition"
+    t.boolean  "requirements_petition"
+    t.boolean  "organization_checkbox"
+    t.boolean  "share_online_checkbox"
+    t.boolean  "share_offline_checkbox"
+    t.text     "organization"
+    t.text     "share_online"
+    t.text     "share_offline"
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
     t.index ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
     t.index ["community_id"], name: "index_budget_investments_on_community_id", using: :btree
@@ -1483,6 +1493,13 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.boolean  "public_interests",                          default: false
     t.boolean  "recommended_debates",                       default: true
     t.boolean  "recommended_proposals",                     default: true
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "plz"
+    t.string   "ort"
+    t.boolean  "area"
+    t.boolean  "marketing"
+    t.boolean  "marketing_olympia"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["geozone_id"], name: "index_users_on_geozone_id", using: :btree

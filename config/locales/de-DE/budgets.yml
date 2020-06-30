@@ -63,7 +63,7 @@ de:
     investments:
       form:
         tag_category_label: "Kategorien"
-        tags_instructions: "Markieren Sie den Vorschlag. Sie können einen Tag auswählen oder selbst erstellen"
+        tags_instructions: "Markiere den Vorschlag. Du kannst einen Tag auswählen oder selbst erstellen. Trenne Tags voneinander durch ein Komma."
         tags_label: Tags
         tags_placeholder: "Geben Sie die Schlagwörter ein, die Sie benutzen möchten, getrennt durch Kommas (',')"
         map_location: "Kartenposition"

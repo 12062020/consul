@@ -211,6 +211,11 @@ ignore_unused:
   - landings.cambia_tu_ciudad.*
   - "seeds.settings.*"
   - "dashboard.polls.*.submit"
+  # Ignore unused by custom content
+  - "budgets.investments.header.price"
+  - "budgets.investments.show.code"
+  - "budgets.investments.show.title"
+  - "valuation.budget_investments.edit.price_first_year"
 ####
 ## Exclude these keys from the `i18n-tasks eq-base" report:
 # ignore_eq_base:
