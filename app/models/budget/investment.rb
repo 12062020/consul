@@ -59,7 +59,7 @@ class Budget
     validates_translation :title, presence: true, length: { in: 4..Budget::Investment.title_max_length }
     validates_translation :summary, length: { maximum: Budget::Investment.summary_max_length }
     validates_translation :description, presence: true, length: { maximum: Budget::Investment.description_max_length }
-    validates_translation :petition, presence: true, length: { maximum: 500 }
+    validates_translation :petition, presence: true
 
     validates :author, presence: true
     validates :heading_id, presence: true

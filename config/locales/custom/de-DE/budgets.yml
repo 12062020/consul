@@ -22,7 +22,7 @@ de:
         description_help: "Bitte begründe deinen Vorschlag (3000 Zeichen)"
         summary_help: "Füge Links zu weiterführenden Informationen hinzu (1000 Zeichen)"
         problem_help: "Welches Problem adressierst du mit deinem Vorschlag?"
-        petition_help: "Was möchtest du mit deinem Vorschlag konkret erreichen? (500 Zeichen)"
+        petition_help: "Was möchtest du mit deinem Vorschlag konkret erreichen?"
         petition_placeholder: "Der Deutsche Bundestag möge beschließen…"
         organization_title: "Organisation"
         organization_checkbox: "Reichst Du diesen Vorschlag im Namen einer Gruppe oder Organisation ein oder wird dieser von einer solchen offiziell unterstützt?"
