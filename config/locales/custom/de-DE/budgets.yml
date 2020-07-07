@@ -7,6 +7,7 @@ de:
           newest: "Neueste zuerst"
           oldest: "Älteste zuerst"
           random: "Zufällig"
+          recommended: "Empfehlungen"
         search_form:
           placeholder: "Suche Petitionsvorschlag"
         sidebar:
@@ -46,5 +47,6 @@ de:
         organization: "Dieser Vorschlag wird unterstützt von:"
         share_online: "Kontaktiere mich gerne zu diesen Vorschlag:"
         share_offline: "Kontaktiere mich gerne, wenn du dich offline zu diesem Vorschlag austauschen möchtest. Für mich wäre dies möglich in:"
+        recommended: "[Empf.]"
       investment:
         already_supported: "Danke, dass du diesen Petitionsvorschlag unterstützt."
