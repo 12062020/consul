@@ -47,6 +47,12 @@ de:
         organization: "Dieser Vorschlag wird unterstützt von:"
         share_online: "Kontaktiere mich gerne zu diesen Vorschlag:"
         share_offline: "Kontaktiere mich gerne, wenn du dich offline zu diesem Vorschlag austauschen möchtest. Für mich wäre dies möglich in:"
-        recommended: "[Empf.]"
+        recommended: "Expert*innenempfehlung"
+        supports: "Abstimmung"
       investment:
-        already_supported: "Danke, dass du diesen Petitionsvorschlag unterstützt."
+        supports:
+          zero: "Keine Stimme"
+          one: "1 Stimme"
+          other: "%{count} Stimmen"
+        give_support: "Abstimmen"
+        already_supported: "Danke, dass Du für diesen Petitionsvorschlag abgestimmt hast."
