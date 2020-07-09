@@ -176,7 +176,7 @@ class Budget < ApplicationRecord
     when "finished"
       %w[random newest oldest]
     else
-      %w[random recommended confidence_score newest oldest]
+      %w[random recommended most_voted less_voted]
     end
   end
 

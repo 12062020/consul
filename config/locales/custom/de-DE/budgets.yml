@@ -8,6 +8,8 @@ de:
           oldest: "Älteste zuerst"
           random: "Zufällig"
           recommended: "Empfehlungen"
+          most_voted: "Meiste Stimmen"
+          less_voted: "Wenigste Stimmen"
         search_form:
           placeholder: "Suche Petitionsvorschlag"
         sidebar:
