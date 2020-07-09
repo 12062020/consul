@@ -59,7 +59,7 @@ class Budget
     validates_translation :title, presence: true, length: { in: 4..Budget::Investment.title_max_length }
     validates_translation :summary, length: { maximum: Budget::Investment.summary_max_length }
     validates_translation :description, presence: true, length: { maximum: Budget::Investment.description_max_length }
-    validates_translation :petition, presence: true, length: { maximum: 500 }
+    validates_translation :petition, presence: true
 
     validates :author, presence: true
     validates :heading_id, presence: true
@@ -94,6 +94,7 @@ class Budget
     scope :undecided,                   -> { where(feasibility: "undecided") }
     scope :with_supports,               -> { where("cached_votes_up > 0") }
     scope :selected,                    -> { feasible.where(selected: true) }
+    scope :is_selected,                 -> { where(selected: true) }
     scope :compatible,                  -> { where(incompatible: false) }
     scope :incompatible,                -> { where(incompatible: true) }
     scope :winners,                     -> { selected.compatible.where(winner: true) }

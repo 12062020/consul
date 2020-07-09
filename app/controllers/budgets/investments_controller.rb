@@ -28,7 +28,7 @@ module Budgets
 
     feature_flag :budgets
 
-    has_orders %w[most_voted newest oldest], only: :show
+    has_orders %w[most_voted newest oldest recommended], only: :show
     has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
 
     valid_filters = %w[not_unfeasible feasible unfeasible unselected selected winners]
@@ -175,6 +175,11 @@ module Budgets
       def investments
         if @current_order == "random"
           @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+                             .order(selected: :desc)
+                             .sort_by_random(session[:random_seed])
+        elsif @current_order == "recommended"
+          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+                             .is_selected
                              .sort_by_random(session[:random_seed])
         else
           @budget.investments.apply_filters_and_search(@budget, params, @current_filter)

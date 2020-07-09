@@ -337,6 +337,39 @@ header,
   }
 }
 
+.recommended {
+  display: inline-block;
+  font-weight: bold;
+  margin-top: $line-height / 2;
+}
+
+.budget-investment .panel h3 {
+  margin-top: 0;
+}
+
+.budget-investment .panel.with-image h3 {
+  margin-top: $line-height / 2;
+}
+
+.supported.callout.success {
+  background: $custom-brown;
+  border: 0;
+  color: #000;
+}
+
+.budget-investment,
+.budget-investment-show {
+
+  .supports .total-supports {
+    color: #000;
+  }
+
+  .button.button-support {
+    background: #fbc11d;
+    color: #000;
+  }
+}
+
 // 4. Active page
 // ------------------------------------
 

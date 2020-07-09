@@ -18,6 +18,9 @@
     <% end %>
         <div class="budget-investment-content">
 
+          <% if investment.selected? %>
+            <span class="recommended"><%= t("budgets.investments.show.recommended") %></span>
+          <% end %>
           <% cache [locale_and_user_status(investment), "index", investment, investment.author] do %>
             <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
 
