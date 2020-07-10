@@ -253,10 +253,6 @@ class Budget
       unfeasible_email_sent_at.blank? && unfeasible? && valuation_finished?
     end
 
-    def cached_votes_up
-      votes_for.count
-    end
-
     def total_votes
       cached_votes_up + physical_votes
     end
@@ -325,7 +321,11 @@ class Budget
     end
 
     def register_selection(user)
-      vote_by(voter: user, vote: "yes") if selectable_by?(user)
+      if selectable_by?(user)
+        votes = cached_votes_up
+        voted = vote_by(voter: user, vote: "yes")
+        update(cached_votes_up: votes + 1, terms_of_service: "1") if voted
+      end
     end
 
     def calculate_confidence_score
