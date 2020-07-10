@@ -121,7 +121,7 @@ de:
         milestones_tab: Meilensteine
         author: Autor
         project_unfeasible: "Dieser Ausgabenvorschlag <strong>wurde als nicht durchführbar markiert</strong> und wird nicht in die Abstimmungsphase übergehen."
-        project_selected: "Dieser Ausgabenvorschlag wurde für die Abstimmungsphase <strong>ausgewählt</strong>."
+        project_selected: "Dieser Vorschlag wurde von den Expert*innen empfohlen."
         project_winner: "Best bewerteter Ausgabenvorschlag"
         project_not_selected: "Dieser Ausgabenvorschlag wurde <strong>nicht</strong> für die Abstimmungsphase ausgewählt."
         see_price_explanation: Erläuterung der Kosten anzeigen
