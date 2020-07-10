@@ -78,6 +78,9 @@ class Budget
     scope :sort_by_id, -> { order("id DESC") }
     scope :sort_by_supports, -> { order("cached_votes_up DESC") }
 
+    scope :sort_by_most_voted, -> { order(cached_votes_up: :desc) }
+    scope :sort_by_less_voted, -> { order(cached_votes_up: :asc) }
+
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :without_admin,               -> { where(administrator_id: nil) }
     scope :without_valuator_group,      -> { where(valuator_group_assignments_count: 0) }
@@ -250,10 +253,6 @@ class Budget
       unfeasible_email_sent_at.blank? && unfeasible? && valuation_finished?
     end
 
-    def cached_votes_up
-      votes_for.count
-    end
-
     def total_votes
       cached_votes_up + physical_votes
     end
@@ -322,7 +321,11 @@ class Budget
     end
 
     def register_selection(user)
-      vote_by(voter: user, vote: "yes") if selectable_by?(user)
+      if selectable_by?(user)
+        votes = cached_votes_up
+        voted = vote_by(voter: user, vote: "yes")
+        update(cached_votes_up: votes + 1, terms_of_service: "1") if voted
+      end
     end
 
     def calculate_confidence_score
