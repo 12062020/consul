@@ -21,4 +21,14 @@ namespace :budgets do
       print "."
     end
   end
+
+  desc "Update cached_votes_up counter to match the real votes count"
+  task update_budget_investments_cached_votes_up_counter: :environment do
+    ApplicationLogger.new.info "Updating cached_votes_up for investments"
+    Budget::Investment.find_each do |investment|
+      investment.update_column(:cached_votes_up, investment.votes_for.count)
+      print "."
+    end
+    ApplicationLogger.new.info "Investments cached_votes_up counter updated!"
+  end
 end
