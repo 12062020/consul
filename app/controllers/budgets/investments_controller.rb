@@ -29,7 +29,7 @@ module Budgets
     feature_flag :budgets
 
     has_orders %w[most_voted newest oldest recommended less_voted], only: :show
-    has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
+    has_orders %w[most_voted], only: :index
 
     valid_filters = %w[not_unfeasible feasible unfeasible unselected selected winners]
     has_filters valid_filters, only: [:index, :show, :suggest]
