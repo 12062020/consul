@@ -23,15 +23,15 @@ every 1.minute do
   command "date > ~/cron-test.txt"
 end
 
-every 5.minutes do
+every 5.minutes, roles: [:cron] do
   rake "budgets:update_budget_investments_cached_votes_up_counter"
 end
 
-every 1.day, at: "5:00 am" do
+every 1.day, at: "5:00 am", roles: [:cron] do
   rake "-s sitemap:refresh"
 end
 
-every 2.hours do
+every 2.hours, roles: [:cron] do
   rake "-s stats:generate"
 end
 
